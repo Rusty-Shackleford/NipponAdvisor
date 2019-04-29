@@ -65,11 +65,11 @@
     <Compile Include="CafeItems\FoodInfo.cs" />
     <Compile Include="CafeItems\Ingredient.cs" />
     <Compile Include="CafeItems\StoreInfo.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Forms\Docks\DockIngredientList.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Forms\Docks\DockIngredientList.Designer.cs">
+      <DependentUpon>DockIngredientList.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Docks\DockMainTemplate.cs">
       <SubType>UserControl</SubType>

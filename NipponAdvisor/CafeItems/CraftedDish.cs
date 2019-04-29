@@ -19,18 +19,18 @@ namespace NipponAdvisor.CafeItems
         #region [ Cook ]
         public void Cook()
         {
-            // Apply Ingredient 1
-            if (CookIngredient1 != null)
-            {
-                foreach (var Property in CookIngredient1.QualityInfo.Attributes)
-                    QualityInfo.Attributes[Property.Key] += Property.Value;
+            //// Apply Ingredient 1
+            //if (CookIngredient1 != null)
+            //{
+            //    foreach (var Property in CookIngredient1.QualityInfo.Attributes)
+            //        QualityInfo.Attributes[Property.Key] += Property.Value;
 
-                if (CookIngredient2 != null)
-                {
-                    foreach (var Property in CookIngredient2.QualityInfo.Attributes)
-                        QualityInfo.Attributes[Property.Key] += Property.Value;
-                }
-            }
+            //    if (CookIngredient2 != null)
+            //    {
+            //        foreach (var Property in CookIngredient2.QualityInfo.Attributes)
+            //            QualityInfo.Attributes[Property.Key] += Property.Value;
+            //    }
+            //}
 
         }
         #endregion
