@@ -103,16 +103,6 @@ namespace NipponAdvisor {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Dish_24x {
-            get {
-                object obj = ResourceManager.GetObject("Dish_24x", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Health_24x {
             get {
                 object obj = ResourceManager.GetObject("Health_24x", resourceCulture);
@@ -136,6 +126,16 @@ namespace NipponAdvisor {
         internal static System.Drawing.Bitmap Texture_24x {
             get {
                 object obj = ResourceManager.GetObject("Texture_24x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Volume {
+            get {
+                object obj = ResourceManager.GetObject("Volume", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

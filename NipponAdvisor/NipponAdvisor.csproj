@@ -185,6 +185,9 @@
     <None Include="Resources\AppIcons\Properties.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
     <None Include="Resources\GameIcons\Appearance_24x.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -197,18 +200,16 @@
     <None Include="Resources\GameIcons\Charisma_24x.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\GameIcons\Dish_24x.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="Resources\GameIcons\Health_24x.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Resources\GameIcons\Rarity_24x.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\GameIcons\Texture_24x.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\GameIcons\Volume.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
