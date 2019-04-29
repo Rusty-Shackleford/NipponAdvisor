@@ -68,7 +68,9 @@ namespace NipponAdvisor
                 GameIcons.Charisma_24x,
                 GameIcons.Health_24x,
                 GameIcons.Rarity_24x,
-                GameIcons.Dish_24x
+                GameIcons.Food_32x24,
+                GameIcons.Star_24x,
+                GameIcons.Kitchen_24x
             };
 
 

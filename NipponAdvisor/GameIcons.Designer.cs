@@ -103,6 +103,16 @@ namespace NipponAdvisor {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Food_32x24 {
+            get {
+                object obj = ResourceManager.GetObject("Food_32x24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Health_24x {
             get {
                 object obj = ResourceManager.GetObject("Health_24x", resourceCulture);
@@ -113,9 +123,39 @@ namespace NipponAdvisor {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Kitchen_24x {
+            get {
+                object obj = ResourceManager.GetObject("Kitchen_24x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon NipponBuddy {
+            get {
+                object obj = ResourceManager.GetObject("NipponBuddy", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Rarity_24x {
             get {
                 object obj = ResourceManager.GetObject("Rarity_24x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Star_24x {
+            get {
+                object obj = ResourceManager.GetObject("Star_24x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +173,9 @@ namespace NipponAdvisor {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Volume {
+        internal static System.Drawing.Bitmap Volume_24x {
             get {
-                object obj = ResourceManager.GetObject("Volume", resourceCulture);
+                object obj = ResourceManager.GetObject("Volume_24x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

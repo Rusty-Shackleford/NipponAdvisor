@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>nipponbuddy.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DarkUI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -68,11 +71,17 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Docks\DockCafeDish.cs">
+    <Compile Include="Forms\Docks\DockMainTemplate.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\Docks\DockCafeDish.Designer.cs">
-      <DependentUpon>DockCafeDish.cs</DependentUpon>
+    <Compile Include="Forms\Docks\DockDish - Copy.Designer.cs">
+      <DependentUpon>DockMainTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Docks\DockDish.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Docks\DockDish.Designer.cs">
+      <DependentUpon>DockDish.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
@@ -96,8 +105,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>AppIcons.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Docks\DockCafeDish.resx">
-      <DependentUpon>DockCafeDish.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Docks\DockDish.resx">
+      <DependentUpon>DockDish.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Docks\DockMainTemplate.resx">
+      <DependentUpon>DockMainTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GameData.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -186,7 +201,17 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\GameIcons\Food_32x24.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\GameIcons\Kitchen_24x.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\GameIcons\Star_24x.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\GameIcons\Appearance_24x.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -209,9 +234,13 @@
     <None Include="Resources\GameIcons\Texture_24x.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\GameIcons\Volume.png">
+    <None Include="Resources\GameIcons\Volume_24x.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="nipponbuddy.ico" />
+    <Content Include="Resources\GameIcons\NipponBuddy.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

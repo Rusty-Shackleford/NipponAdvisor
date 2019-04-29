@@ -7,22 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DarkUI.Controls;
 using DarkUI.Docking;
-using DarkUI.Forms;
 
 namespace NipponAdvisor.Forms.Docks
 {
-    public partial class DockCafeDish : DarkToolWindow
+    public partial class DockMainTemplate : DarkToolWindow
     {
-        public DockCafeDish()
+        public DockMainTemplate()
         {
             InitializeComponent();
         }
 
-        private void DockCafeDish_Load(object sender, EventArgs e)
+        private void TrackBarStars_Changed(object sender, EventArgs e)
         {
-            var x = new DarkDockPanel();
+            labelDishRating.Text = trackDishRating.Value.ToString();
+        }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }
