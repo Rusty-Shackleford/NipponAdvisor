@@ -83,6 +83,26 @@ namespace NipponAdvisor {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BottleClosed_16x {
+            get {
+                object obj = ResourceManager.GetObject("BottleClosed_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BottleOpened_16x {
+            get {
+                object obj = ResourceManager.GetObject("BottleOpened_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Brain_24x {
             get {
                 object obj = ResourceManager.GetObject("Brain_24x", resourceCulture);
@@ -123,9 +143,29 @@ namespace NipponAdvisor {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ingredient_16x {
+            get {
+                object obj = ResourceManager.GetObject("ingredient_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Kitchen_24x {
             get {
                 object obj = ResourceManager.GetObject("Kitchen_24x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Mushroom_16x {
+            get {
+                object obj = ResourceManager.GetObject("Mushroom_16x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

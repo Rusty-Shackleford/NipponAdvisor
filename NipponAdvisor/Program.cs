@@ -19,7 +19,7 @@ namespace NipponAdvisor
     {
         #region [ Global Static Resources ]
         public static List<Dish> DishTable { get; private set; }
-        public static List<Ingredient> IngredientTable { get; private set; }
+        public static IngredientList Ingredients { get; private set; }
 
         public static List<Image> IconSet_Application { get; private set; }
         public static List<Image> IconSet_Game { get; private set; }
@@ -35,8 +35,7 @@ namespace NipponAdvisor
             DishTable = JsonConvert.DeserializeObject<List<Dish>>(DishJson);
 
             // Load Ingredient Data
-            string IngredientJson = GameData.IngredientData;
-            IngredientTable = JsonConvert.DeserializeObject<List<Ingredient>>(IngredientJson);
+            Ingredients = new IngredientList(GameData.IngredientData);
 
             // Load Icon Files
             IconSet_Application = new List<Image>()
