@@ -69,6 +69,18 @@
     <Compile Include="DarkUIExt\DarkToolWindowExt.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Forms\Dialogs\SelectBaseDish.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\SelectBaseDish.Designer.cs">
+      <DependentUpon>SelectBaseDish.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Docks\DockCafeDish.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Docks\DockCafeDish.Designer.cs">
+      <DependentUpon>DockCafeDish.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Docks\DockIngredientList.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -103,6 +115,12 @@
     <EmbeddedResource Include="AppIcons.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>AppIcons.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\SelectBaseDish.resx">
+      <DependentUpon>SelectBaseDish.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Docks\DockCafeDish.resx">
+      <DependentUpon>DockCafeDish.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Docks\DockDish.resx">
       <DependentUpon>DockDish.cs</DependentUpon>
@@ -239,6 +257,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="nipponbuddy.ico" />
+    <None Include="Resources\GameIcons\Food_16x11.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\DarkGrayBg.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Resources\GameIcons\BottleClosed_16x.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

@@ -10,8 +10,8 @@ namespace NipponAdvisor.CafeItems
     {
         #region [ Fields ]
         public Dish BaseDish { get; set; }
-        public Quality QualityInfo { get; set; }
-
+        public QualitySet Quality { get; set; }
+        public string CustomName { get; set; }
         public Ingredient CookIngredient1 { get; set; }
         public Ingredient CookIngredient2 { get; set; }
         #endregion
@@ -19,7 +19,7 @@ namespace NipponAdvisor.CafeItems
         #region [ Constructor ]
         public CraftedDish() : base()
         {
-            QualityInfo = new Quality();
+            Quality = new QualitySet();
         }
         #endregion
 
@@ -28,8 +28,9 @@ namespace NipponAdvisor.CafeItems
         {
             if (BaseDish == null)
                 return false;
-            if (QualityInfo == null)
+            if (Quality == null)
                 return false;
+
             if (CookIngredient1 == null)
                 return false;
             if (CookIngredient2 == null)

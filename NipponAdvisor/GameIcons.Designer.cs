@@ -123,6 +123,16 @@ namespace NipponAdvisor {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Food_16x11 {
+            get {
+                object obj = ResourceManager.GetObject("Food_16x11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Food_32x24 {
             get {
                 object obj = ResourceManager.GetObject("Food_32x24", resourceCulture);

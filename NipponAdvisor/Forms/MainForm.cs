@@ -16,7 +16,7 @@ namespace NipponAdvisor.Forms
     {
         #region [ Fields ]
         private List<DarkToolWindowExt> _dockWindows = new List<DarkToolWindowExt>();
-        private DockDish _dockCafeDish;
+        private DockCafeDish _dockCafeDish;
         private DockIngredientList _dockIngredients;
 
         // Default Colors for Status Label
@@ -44,7 +44,7 @@ namespace NipponAdvisor.Forms
             HookEvents();
 
             // DOCK: Dish
-            _dockCafeDish = new DockDish(DarkDockArea.Left)
+            _dockCafeDish = new DockCafeDish(DarkDockArea.Left)
             {
                 Name = "DockCafeDish"
             };

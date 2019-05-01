@@ -10,16 +10,21 @@ namespace NipponAdvisor.CafeItems
     /// This should probably be it's own Implementation of a collection, but 
     /// in this case I think it's ok.  :)
     /// </summary>
-    public class Quality
+    public class QualitySet
     {
         public Dictionary<string, int> Attributes { get; set; }
 
         #region [ Constructors ]
-        // Empty Stats
-        public Quality() : this(null) { }
+        /// <summary>
+        /// Create a quality set with 0s
+        /// </summary>
+        public QualitySet() : this(null) { }
 
-
-        public Quality(Quality copyFrom)
+        /// <summary>
+        /// Create a quality set from another quality set.
+        /// </summary>
+        /// <param name="copyFrom"></param>
+        public QualitySet(QualitySet copyFrom)
         {
             Attributes = new Dictionary<string, int>();
 
