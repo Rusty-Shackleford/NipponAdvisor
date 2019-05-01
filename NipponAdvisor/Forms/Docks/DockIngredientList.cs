@@ -1,28 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using DarkUI.Docking;
-using NipponAdvisor.CafeItems;
 using DarkUI.Controls;
+using NipponAdvisor.DarkUIExt;
+
 
 namespace NipponAdvisor.Forms.Docks
 {
-    public partial class DockIngredientList : DarkToolWindow
+    public partial class DockIngredientList : DarkToolWindowExt
     {
-        #region [ Constructor ]
-
+        #region [ Members ]
         #endregion
-        public DockIngredientList()
+
+        #region [ Constructor ]
+        public DockIngredientList(DarkDockArea area) : base(area)
         {
             InitializeComponent();
             LoadIngredients();
         }
+        #endregion
+
 
         #region [ Load Ingredients ]
         private void LoadIngredients()

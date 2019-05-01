@@ -1,4 +1,6 @@
-﻿namespace NipponAdvisor.Forms.Docks
+﻿using NipponAdvisor.DarkUIExt;
+
+namespace NipponAdvisor.Forms.Docks
 {
     partial class DockIngredientList
     {

@@ -32,7 +32,7 @@ namespace NipponAdvisor.Forms
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.stripMain = new DarkUI.Controls.DarkStatusStrip();
-            this.labelStatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.LabelStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
             this.mnuMain = new DarkUI.Controls.DarkMenuStrip();
@@ -54,6 +54,7 @@ namespace NipponAdvisor.Forms
             this.mnuHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.DockPanel = new DarkUI.Docking.DarkDockPanel();
+            this.darkSeparator1 = new DarkUI.Controls.DarkSeparator();
             this.stripMain.SuspendLayout();
             this.mnuMain.SuspendLayout();
             this.SuspendLayout();
@@ -65,7 +66,7 @@ namespace NipponAdvisor.Forms
             this.stripMain.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.stripMain.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.stripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.labelStatus,
+            this.LabelStatus,
             this.toolStripStatusLabel6,
             this.toolStripStatusLabel5});
             this.stripMain.Location = new System.Drawing.Point(0, 354);
@@ -76,20 +77,19 @@ namespace NipponAdvisor.Forms
             this.stripMain.TabIndex = 3;
             this.stripMain.Text = "darkStatusStrip1";
             // 
-            // labelStatus
+            // LabelStatus
             // 
-            this.labelStatus.AutoSize = false;
-            this.labelStatus.Margin = new System.Windows.Forms.Padding(1, 0, 50, 0);
-            this.labelStatus.Name = "labelStatus";
-            this.labelStatus.Size = new System.Drawing.Size(39, 16);
-            this.labelStatus.Text = "Ready";
-            this.labelStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.LabelStatus.Margin = new System.Windows.Forms.Padding(1, 0, 50, 0);
+            this.LabelStatus.Name = "LabelStatus";
+            this.LabelStatus.Size = new System.Drawing.Size(38, 16);
+            this.LabelStatus.Text = "Ready";
+            this.LabelStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // toolStripStatusLabel6
             // 
             this.toolStripStatusLabel6.Margin = new System.Windows.Forms.Padding(0, 0, 50, 2);
             this.toolStripStatusLabel6.Name = "toolStripStatusLabel6";
-            this.toolStripStatusLabel6.Size = new System.Drawing.Size(568, 14);
+            this.toolStripStatusLabel6.Size = new System.Drawing.Size(569, 14);
             this.toolStripStatusLabel6.Spring = true;
             this.toolStripStatusLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -272,11 +272,21 @@ namespace NipponAdvisor.Forms
             this.DockPanel.Size = new System.Drawing.Size(785, 330);
             this.DockPanel.TabIndex = 6;
             // 
+            // darkSeparator1
+            // 
+            this.darkSeparator1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.darkSeparator1.Location = new System.Drawing.Point(0, 24);
+            this.darkSeparator1.Name = "darkSeparator1";
+            this.darkSeparator1.Size = new System.Drawing.Size(785, 2);
+            this.darkSeparator1.TabIndex = 7;
+            this.darkSeparator1.Text = "darkSeparator1";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(785, 378);
+            this.Controls.Add(this.darkSeparator1);
             this.Controls.Add(this.DockPanel);
             this.Controls.Add(this.mnuMain);
             this.Controls.Add(this.stripMain);
@@ -295,7 +305,7 @@ namespace NipponAdvisor.Forms
 
         #endregion
         private DarkUI.Controls.DarkStatusStrip stripMain;
-        private System.Windows.Forms.ToolStripStatusLabel labelStatus;
+        private System.Windows.Forms.ToolStripStatusLabel LabelStatus;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel6;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel5;
         private DarkUI.Controls.DarkMenuStrip mnuMain;
@@ -317,5 +327,6 @@ namespace NipponAdvisor.Forms
         private System.Windows.Forms.ToolStripMenuItem mnuHelp;
         private System.Windows.Forms.ToolStripMenuItem mnuAbout;
         private DarkDockPanel DockPanel;
+        private DarkUI.Controls.DarkSeparator darkSeparator1;
     }
 }

@@ -6,16 +6,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 using NipponAdvisor.Forms.Docks;
+using System.Drawing;
+using NipponAdvisor.DarkUIExt;
+
 
 namespace NipponAdvisor.Forms
 {
     public partial class MainForm : DarkForm
     {
         #region [ Fields ]
-        private List<DarkDockContent> _toolWindows = new List<DarkDockContent>();
+        private List<DarkToolWindowExt> _dockWindows = new List<DarkToolWindowExt>();
         private DockDish _dockCafeDish;
         private DockIngredientList _dockIngredients;
-        private Dictionary<string, DarkDockArea> DockAreaMapping;
+
+        // Default Colors for Status Label
+        private Color StatusErrorColor = Color.FromArgb(255, 0, 0); 
+        private Color StatusDefaultColor = Color.FromArgb(220, 220, 220);
         #endregion
 
         #region [ Constructor | Load ]
@@ -23,56 +29,49 @@ namespace NipponAdvisor.Forms
         {
             InitializeComponent();
 
-            // Add the control scroll message filter to re-route all mousewheel events
+            // [Construct] Add the control scroll message filter to re-route all mousewheel events
             // to the control the user is currently hovering over with their cursor.
             Application.AddMessageFilter(new ControlScrollFilter());
 
-            // Add the dock content drag message filter to handle moving dock content around.
+            // [Construct] Add the dock content drag message filter to handle moving dock content around.
             Application.AddMessageFilter(DockPanel.DockContentDragFilter);
 
-            // Add the dock panel message filter to filter through for dock panel splitter
+            // [Construct] Add the dock panel message filter to filter through for dock panel splitter
             // input before letting events pass through to the rest of the application.
             Application.AddMessageFilter(DockPanel.DockResizeFilter);
 
-            // Hook Events
+            // [Construct] Hook Events
             HookEvents();
 
-            // Hack - each dock seems to lose its Dock Area if removed from form.
-            // Keep a dictionary mapping for later use.
-            DockAreaMapping = new Dictionary<string, DarkDockArea>();
-
-
-            // Docks - Cafe Dish
-            _dockCafeDish = new DockDish
+            // DOCK: Dish
+            _dockCafeDish = new DockDish(DarkDockArea.Left)
             {
-                DefaultDockArea = DarkDockArea.None,
-                DockArea = DarkDockArea.Left,
                 Name = "DockCafeDish"
             };
-            DockAreaMapping.Add(_dockCafeDish.Name, DarkDockArea.Left);
-            // Docks - Ingredients
-            _dockIngredients = new DockIngredientList
+
+            // DOCK: Ingredients
+            _dockIngredients = new DockIngredientList(DarkDockArea.Right)
             {
-                DefaultDockArea = DarkDockArea.None,
-                DockArea = DarkDockArea.Right,
                 Name = "DockIngredients"
             };
-            DockAreaMapping.Add(_dockIngredients.Name, DarkDockArea.Right);
 
-            _toolWindows.Add(_dockCafeDish);
-            _toolWindows.Add(_dockIngredients);
+            // DOCK: Setup
+            _dockWindows.Add(_dockCafeDish);
+            _dockWindows.Add(_dockIngredients);
 
-            foreach (var toolWindow in _toolWindows)
+            foreach (var dockWindow in _dockWindows)
             {
-                DockPanel.AddContent(toolWindow);
+                DockPanel.AddContent(dockWindow);
+                dockWindow.StatusUpdate += UpdateStatusLabel;
             }
 
-
-            // Build Window Menu
+            // [Construct] Build Window Menu
             BuildWindowMenu();
-
         }
+        #endregion
 
+
+        #region [ Load ]
         private void MainForm_Load(object sender, EventArgs e)
         {
             _dockIngredients.RefreshNodes();
@@ -85,28 +84,57 @@ namespace NipponAdvisor.Forms
         #region [ HookEvents ]
         private void HookEvents()
         {
+            // Main Dock Panel
             DockPanel.ContentAdded += DockPanel_ContentAdded;
             DockPanel.ContentRemoved += DockPanel_ContentRemoved;
+            // Menu Items
             mnuIngredients.Click += Ingredients_Click;
             mnuDish.Click += Dish_Click;
         }
         #endregion
 
 
-        #region [ ToggleToolWindow ]
-        private void ToggleToolWindow(DarkToolWindow toolWindow)
+        #region [ HandleErrorMessages ]
+        public void UpdateStatusLabel(object sender, StatusMessageArgs args)
         {
-            toolWindow.DockArea = DockAreaMapping[toolWindow.Name];
+            switch (args.Type)
+            {
+                case StatusType.Error:
+                    LabelStatus.Text = args.Message;
+                    LabelStatus.ForeColor = StatusErrorColor;
+                    break;
+                case StatusType.Ready:
+                    LabelStatus.Text = "Ready";
+                    LabelStatus.ForeColor = StatusDefaultColor;
+                    break;
+                case StatusType.Info:
+                    LabelStatus.Text = "Ready";
+                    LabelStatus.ForeColor = StatusDefaultColor;
+                    break;
+                case StatusType.Clear:
+                    LabelStatus.Text = "Ready";
+                    LabelStatus.ForeColor = StatusDefaultColor;
+                    break;
+                default:
+                    break;
+            }
+            
+        }
 
-            if (toolWindow.DockPanel == null)
-                DockPanel.AddContent(toolWindow);
-            else
-                DockPanel.RemoveContent(toolWindow);
+        private void SetError()
+        {
+            LabelStatus.ForeColor = StatusErrorColor;
+        }
+
+        private void ClearError()
+        {
+            LabelStatus.ForeColor = StatusDefaultColor;
         }
         #endregion
 
 
         #region [ BuildWindowMenu ]     
+        // Build the "Window" Menu
         private void BuildWindowMenu()
         {
             mnuDish.Checked = DockPanel.ContainsContent(_dockCafeDish);
@@ -115,24 +143,34 @@ namespace NipponAdvisor.Forms
         #endregion
 
 
-        #region [ Events ]
+        #region [ DockPanel / Window Events ]
+        // Toggle Form Docks
+        private void ToggleToolWindow(DarkToolWindowExt toolWindow)
+        {
+            if (toolWindow.DockPanel == null)
+                DockPanel.AddContent(toolWindow);
+            else
+                DockPanel.RemoveContent(toolWindow);
+        }
+        // Adding Docks
         private void DockPanel_ContentAdded(object sender, DockContentEventArgs e)
         {
-            if (_toolWindows.Contains(e.Content))
+
+            if (_dockWindows.Contains(e.Content as DarkToolWindowExt))
                 BuildWindowMenu();
         }
-
+        // Removing Docks
         private void DockPanel_ContentRemoved(object sender, DockContentEventArgs e)
         {
-            if (_toolWindows.Contains(e.Content))
+            if (_dockWindows.Contains(e.Content as DarkToolWindowExt))
                 BuildWindowMenu();
         }
-
+        // Toggle Dish Window
         private void Dish_Click(object sender, EventArgs e)
         {
             ToggleToolWindow(_dockCafeDish);
         }
-
+        // Toggle Ingredients Window
         private void Ingredients_Click(object sender, EventArgs e)
         {
             ToggleToolWindow(_dockIngredients);

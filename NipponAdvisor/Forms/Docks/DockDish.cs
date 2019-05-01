@@ -9,17 +9,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DarkUI.Docking;
 using NipponAdvisor.CafeItems;
+using NipponAdvisor.DarkUIExt;
 
 namespace NipponAdvisor.Forms.Docks
 {
-    public partial class DockDish : DarkToolWindow
+    public partial class DockDish : DarkToolWindowExt
     {
         #region [ Members ]
         public CraftedDish UserDish { get; set; }
         #endregion
 
         #region [ Constructor ]
-        public DockDish()
+        public DockDish(DarkDockArea area) : base(area)
         {
             InitializeComponent();
         }
@@ -34,6 +35,7 @@ namespace NipponAdvisor.Forms.Docks
         {
             UserDish = new CraftedDish();
             textDishName.Text = "Dish Nickname";
+            ComboBaseDish.SelectedIndex = 0;
             sliderRating.Value = 1;
         }
         #endregion
@@ -50,14 +52,14 @@ namespace NipponAdvisor.Forms.Docks
         #region [ ComboBox: Base Dish ]
         private void LoadComboBaseDish()
         {
-            comboBaseDish.Items.Clear();
+            ComboBaseDish.Items.Clear();
             foreach (var dish in Program.DishTable)
             {
-                comboBaseDish.Items.Add(dish.Name);
+                ComboBaseDish.Items.Add(dish.Name);
             }
         }
 
-        private void comboBaseDish_Validating(object sender, CancelEventArgs e)
+        private void ComboBaseDish_Validating(object sender, CancelEventArgs e)
         {
             ComboBox box = (ComboBox)sender;
             if (!ValidBaseDishComboBox(box, out string errorMessage))
@@ -66,13 +68,15 @@ namespace NipponAdvisor.Forms.Docks
                 box.Select(0, box.Text.Length);
                 box.ForeColor = Color.Orange;
                 OnInvalidated(null);
+                OnStatusUpdate(new StatusMessageArgs(errorMessage, StatusType.Error));
             }
         }
 
-        private void comboBaseDish_Validated(object sender, EventArgs e)
+        private void ComboBaseDish_Validated(object sender, EventArgs e)
         {
             ComboBox box = (ComboBox)sender;
             box.ForeColor = Color.Gainsboro;
+            OnStatusUpdate(new StatusMessageArgs(StatusType.Clear));
         }
 
         private bool ValidBaseDishComboBox(ComboBox combo, out string errorMessage)

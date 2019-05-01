@@ -1,4 +1,6 @@
-﻿namespace NipponAdvisor.Forms.Docks
+﻿using NipponAdvisor.DarkUIExt;
+
+namespace NipponAdvisor.Forms.Docks
 {
     partial class DockDish
     {
@@ -32,7 +34,7 @@
             this.tblLayoutDishInfo = new System.Windows.Forms.TableLayoutPanel();
             this.titleRating = new DarkUI.Controls.DarkTitle();
             this.titleDishName = new DarkUI.Controls.DarkTitle();
-            this.comboBaseDish = new System.Windows.Forms.ComboBox();
+            this.ComboBaseDish = new System.Windows.Forms.ComboBox();
             this.textDishName = new DarkUI.Controls.DarkTextBox();
             this.tblLayoutRating = new System.Windows.Forms.TableLayoutPanel();
             this.labelRating = new DarkUI.Controls.DarkLabel();
@@ -91,7 +93,7 @@
             this.tblLayoutDishInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tblLayoutDishInfo.Controls.Add(this.titleRating, 0, 4);
             this.tblLayoutDishInfo.Controls.Add(this.titleDishName, 0, 0);
-            this.tblLayoutDishInfo.Controls.Add(this.comboBaseDish, 0, 1);
+            this.tblLayoutDishInfo.Controls.Add(this.ComboBaseDish, 0, 1);
             this.tblLayoutDishInfo.Controls.Add(this.textDishName, 0, 2);
             this.tblLayoutDishInfo.Controls.Add(this.tblLayoutRating, 0, 5);
             this.tblLayoutDishInfo.Dock = System.Windows.Forms.DockStyle.Top;
@@ -132,23 +134,23 @@
             this.titleDishName.TabIndex = 9;
             this.titleDishName.Text = "Dish Name / Base Dish";
             // 
-            // comboBaseDish
+            // ComboBaseDish
             // 
-            this.comboBaseDish.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBaseDish.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBaseDish.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
-            this.comboBaseDish.Dock = System.Windows.Forms.DockStyle.Left;
-            this.comboBaseDish.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBaseDish.ForeColor = System.Drawing.Color.Gainsboro;
-            this.comboBaseDish.FormattingEnabled = true;
-            this.comboBaseDish.Location = new System.Drawing.Point(0, 25);
-            this.comboBaseDish.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.comboBaseDish.Name = "comboBaseDish";
-            this.comboBaseDish.Size = new System.Drawing.Size(164, 23);
-            this.comboBaseDish.TabIndex = 1;
-            this.comboBaseDish.Text = "Base Dish";
-            this.comboBaseDish.Validating += new System.ComponentModel.CancelEventHandler(this.comboBaseDish_Validating);
-            this.comboBaseDish.Validated += new System.EventHandler(this.comboBaseDish_Validated);
+            this.ComboBaseDish.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.ComboBaseDish.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.ComboBaseDish.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
+            this.ComboBaseDish.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ComboBaseDish.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ComboBaseDish.ForeColor = System.Drawing.Color.Gainsboro;
+            this.ComboBaseDish.FormattingEnabled = true;
+            this.ComboBaseDish.Location = new System.Drawing.Point(0, 25);
+            this.ComboBaseDish.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.ComboBaseDish.Name = "ComboBaseDish";
+            this.ComboBaseDish.Size = new System.Drawing.Size(164, 23);
+            this.ComboBaseDish.TabIndex = 1;
+            this.ComboBaseDish.Text = "Base Dish";
+            this.ComboBaseDish.Validating += new System.ComponentModel.CancelEventHandler(this.ComboBaseDish_Validating);
+            this.ComboBaseDish.Validated += new System.EventHandler(this.ComboBaseDish_Validated);
             // 
             // textDishName
             // 
@@ -517,7 +519,7 @@
         private System.Windows.Forms.PictureBox imgTexture;
         private System.Windows.Forms.PictureBox imgAroma;
         private System.Windows.Forms.TableLayoutPanel tblLayoutDishInfo;
-        private System.Windows.Forms.ComboBox comboBaseDish;
+        private System.Windows.Forms.ComboBox ComboBaseDish;
         private DarkUI.Controls.DarkTitle titleRating;
         private System.Windows.Forms.TableLayoutPanel tblLayoutRating;
         private DarkUI.Controls.DarkLabel labelRating;
