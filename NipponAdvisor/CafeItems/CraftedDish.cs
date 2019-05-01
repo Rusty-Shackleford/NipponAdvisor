@@ -16,6 +16,29 @@ namespace NipponAdvisor.CafeItems
         public Ingredient CookIngredient2 { get; set; }
         #endregion
 
+        #region [ Constructor ]
+        public CraftedDish() : base()
+        {
+            QualityInfo = new Quality();
+        }
+        #endregion
+
+        #region [ Ready ]
+        public bool Ready()
+        {
+            if (BaseDish == null)
+                return false;
+            if (QualityInfo == null)
+                return false;
+            if (CookIngredient1 == null)
+                return false;
+            if (CookIngredient2 == null)
+                return false;
+
+            return true;
+        }
+        #endregion
+
         #region [ Cook ]
         public void Cook()
         {

@@ -62,7 +62,7 @@
     </Compile>
     <Compile Include="CafeItems\CraftedDish.cs" />
     <Compile Include="CafeItems\Dish.cs" />
-    <Compile Include="CafeItems\FoodInfo.cs" />
+    <Compile Include="CafeItems\Quality.cs" />
     <Compile Include="CafeItems\Ingredient.cs" />
     <Compile Include="CafeItems\IngredientList.cs" />
     <Compile Include="CafeItems\StoreInfo.cs" />
@@ -71,12 +71,6 @@
     </Compile>
     <Compile Include="Forms\Docks\DockIngredientList.Designer.cs">
       <DependentUpon>DockIngredientList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Docks\DockMainTemplate.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\Docks\DockDish - Copy.Designer.cs">
-      <DependentUpon>DockMainTemplate.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Docks\DockDish.cs">
       <SubType>UserControl</SubType>
@@ -111,9 +105,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Docks\DockIngredientList.resx">
       <DependentUpon>DockIngredientList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Docks\DockMainTemplate.resx">
-      <DependentUpon>DockMainTemplate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

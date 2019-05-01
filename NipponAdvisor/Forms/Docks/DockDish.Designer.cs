@@ -134,6 +134,8 @@
             // 
             // comboBaseDish
             // 
+            this.comboBaseDish.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBaseDish.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBaseDish.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
             this.comboBaseDish.Dock = System.Windows.Forms.DockStyle.Left;
             this.comboBaseDish.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -145,6 +147,8 @@
             this.comboBaseDish.Size = new System.Drawing.Size(164, 23);
             this.comboBaseDish.TabIndex = 1;
             this.comboBaseDish.Text = "Base Dish";
+            this.comboBaseDish.Validating += new System.ComponentModel.CancelEventHandler(this.comboBaseDish_Validating);
+            this.comboBaseDish.Validated += new System.EventHandler(this.comboBaseDish_Validated);
             // 
             // textDishName
             // 
@@ -455,7 +459,7 @@
             this.panel1.Size = new System.Drawing.Size(204, 53);
             this.panel1.TabIndex = 2;
             // 
-            // DockMain
+            // DockDish
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -466,8 +470,9 @@
             this.DockText = "Dish Info";
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Icon = global::NipponAdvisor.GameIcons.Food_32x24;
-            this.Name = "DockMain";
+            this.Name = "DockDish";
             this.Size = new System.Drawing.Size(204, 383);
+            this.Load += new System.EventHandler(this.DockDish_Load);
             this.panelTop.ResumeLayout(false);
             this.tblLayoutDishInfo.ResumeLayout(false);
             this.tblLayoutDishInfo.PerformLayout();

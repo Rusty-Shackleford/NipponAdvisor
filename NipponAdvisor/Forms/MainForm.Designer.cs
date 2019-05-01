@@ -32,7 +32,7 @@ namespace NipponAdvisor.Forms
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.stripMain = new DarkUI.Controls.DarkStatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.labelStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
             this.mnuMain = new DarkUI.Controls.DarkMenuStrip();
@@ -65,7 +65,7 @@ namespace NipponAdvisor.Forms
             this.stripMain.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.stripMain.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.stripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1,
+            this.labelStatus,
             this.toolStripStatusLabel6,
             this.toolStripStatusLabel5});
             this.stripMain.Location = new System.Drawing.Point(0, 354);
@@ -76,20 +76,20 @@ namespace NipponAdvisor.Forms
             this.stripMain.TabIndex = 3;
             this.stripMain.Text = "darkStatusStrip1";
             // 
-            // toolStripStatusLabel1
+            // labelStatus
             // 
-            this.toolStripStatusLabel1.AutoSize = false;
-            this.toolStripStatusLabel1.Margin = new System.Windows.Forms.Padding(1, 0, 50, 0);
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(39, 16);
-            this.toolStripStatusLabel1.Text = "Ready";
-            this.toolStripStatusLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelStatus.AutoSize = false;
+            this.labelStatus.Margin = new System.Windows.Forms.Padding(1, 0, 50, 0);
+            this.labelStatus.Name = "labelStatus";
+            this.labelStatus.Size = new System.Drawing.Size(39, 16);
+            this.labelStatus.Text = "Ready";
+            this.labelStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // toolStripStatusLabel6
             // 
             this.toolStripStatusLabel6.Margin = new System.Windows.Forms.Padding(0, 0, 50, 2);
             this.toolStripStatusLabel6.Name = "toolStripStatusLabel6";
-            this.toolStripStatusLabel6.Size = new System.Drawing.Size(599, 14);
+            this.toolStripStatusLabel6.Size = new System.Drawing.Size(568, 14);
             this.toolStripStatusLabel6.Spring = true;
             this.toolStripStatusLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -166,7 +166,7 @@ namespace NipponAdvisor.Forms
             // 
             this.mnuDialog.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.mnuDialog.Name = "mnuDialog";
-            this.mnuDialog.Size = new System.Drawing.Size(180, 22);
+            this.mnuDialog.Size = new System.Drawing.Size(130, 22);
             this.mnuDialog.Text = "&Dialog test";
             // 
             // mnuTools
@@ -237,14 +237,14 @@ namespace NipponAdvisor.Forms
             // 
             this.mnuDish.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.mnuDish.Name = "mnuDish";
-            this.mnuDish.Size = new System.Drawing.Size(180, 22);
+            this.mnuDish.Size = new System.Drawing.Size(133, 22);
             this.mnuDish.Text = "&Dish Info";
             // 
             // mnuIngredients
             // 
             this.mnuIngredients.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.mnuIngredients.Name = "mnuIngredients";
-            this.mnuIngredients.Size = new System.Drawing.Size(180, 22);
+            this.mnuIngredients.Size = new System.Drawing.Size(133, 22);
             this.mnuIngredients.Text = "&Ingredients";
             // 
             // mnuHelp
@@ -295,7 +295,7 @@ namespace NipponAdvisor.Forms
 
         #endregion
         private DarkUI.Controls.DarkStatusStrip stripMain;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel labelStatus;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel6;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel5;
         private DarkUI.Controls.DarkMenuStrip mnuMain;

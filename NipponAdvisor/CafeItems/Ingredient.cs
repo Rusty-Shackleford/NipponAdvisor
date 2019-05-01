@@ -27,7 +27,7 @@ namespace NipponAdvisor.CafeItems
         public int Health { get; set; }
         public int Brain { get; set; }
         public int Texture { get; set; }
-        public int Armoa { get; set; }
+        public int Aroma { get; set; }
         public int Appearance { get; set; }
         public int Volume { get; set; }
         public int Rarity { get; set; }
@@ -36,13 +36,20 @@ namespace NipponAdvisor.CafeItems
         [JsonProperty("Category")]
         [JsonConverter(typeof(StringEnumConverter))]
         public Category Category { get; set; }
-
         public int Price { get; set; }
+
+        public int TotalValue { get; }
+        // Calculated Data
+
         #endregion
 
 
         #region [ Constructor ]
-        public Ingredient() { }
+        public Ingredient()
+        {
+            TotalValue = Health + Brain + Texture + Aroma 
+                + Appearance + Volume + Rarity + Charisma;
+        }
         #endregion
     }
 }
