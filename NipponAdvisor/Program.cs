@@ -18,8 +18,8 @@ namespace NipponAdvisor
     static class Program
     {
         #region [ Global Static Resources ]
-        public static List<Dish> DishTable { get; private set; }
-        public static IngredientList Ingredients { get; private set; }
+        public static DishTable DishTable { get; private set; }
+        public static IngredientsTable IngredientsTable { get; private set; }
 
         public static List<Image> IconSet_Application { get; private set; }
         public static List<Image> IconSet_Game { get; private set; }
@@ -29,13 +29,9 @@ namespace NipponAdvisor
         [STAThread]
         static void Main()
         {
-            // Load Dish Data
-            // string DishJson = GameData.ResourceManager.GetString("DishData");
-            string DishJson = GameData.DishData;
-            DishTable = JsonConvert.DeserializeObject<List<Dish>>(DishJson);
-
-            // Load Ingredient Data
-            Ingredients = new IngredientList(GameData.IngredientData);
+            // Create Data Objects
+            DishTable = new DishTable(GameData.DishData);
+            IngredientsTable = new IngredientsTable(GameData.IngredientData);
 
             // Load Icon Files
             IconSet_Application = new List<Image>()

@@ -4,6 +4,7 @@ namespace NipponAdvisor.CafeItems
 {
     public class Dish
     {
+        #region [ Fields ]
         // Dish Information
         public string Name { get; set; }
         public int BaseRating { get; set; }
@@ -19,7 +20,7 @@ namespace NipponAdvisor.CafeItems
         public int CostPerMonth { get; set; }
         public bool Craftable { get; set; }
         public string Source { get; set; }
-
+        #endregion
 
         #region [ Description Fields ]
         public string PriceDescription
@@ -73,7 +74,7 @@ namespace NipponAdvisor.CafeItems
             }
         }
 
-        public string GetSourceDescription()
+        private string GetSourceDescription()
         {
             var elem = Source.Split('|').ToList();
             string retString = "";

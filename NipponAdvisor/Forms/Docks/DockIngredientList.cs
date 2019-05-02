@@ -23,7 +23,7 @@ namespace NipponAdvisor.Forms.Docks
         #region [ Load Ingredients ]
         private void LoadIngredients()
         {
-            foreach (var category in Program.Ingredients.ByCategory)
+            foreach (var category in Program.IngredientsTable.ByCategory)
             {
                 var categoryNode = new DarkTreeNode(category.Key.ToString())
                 {

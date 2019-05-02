@@ -30,11 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DialogSelectDish));
             this.darkSectionPanel1 = new DarkUI.Controls.DarkSectionPanel();
-            this.panelCombo = new System.Windows.Forms.Panel();
-            this.ComboBaseDish = new System.Windows.Forms.ComboBox();
-            this.panelNote = new System.Windows.Forms.Panel();
-            this.titleNote = new DarkUI.Controls.DarkTitle();
-            this.labelNote = new DarkUI.Controls.DarkLabel();
             this.panelInfo = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.darkLabel7 = new DarkUI.Controls.DarkLabel();
@@ -49,11 +44,16 @@
             this.darkLabel3 = new DarkUI.Controls.DarkLabel();
             this.labelBaseRating = new DarkUI.Controls.DarkLabel();
             this.darkLabel1 = new DarkUI.Controls.DarkLabel();
+            this.panelNote = new System.Windows.Forms.Panel();
+            this.labelNote = new DarkUI.Controls.DarkLabel();
+            this.titleNote = new DarkUI.Controls.DarkTitle();
+            this.panelCombo = new System.Windows.Forms.Panel();
+            this.Combo_BaseDish = new System.Windows.Forms.ComboBox();
             this.darkSectionPanel1.SuspendLayout();
-            this.panelCombo.SuspendLayout();
-            this.panelNote.SuspendLayout();
             this.panelInfo.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.panelNote.SuspendLayout();
+            this.panelCombo.SuspendLayout();
             this.SuspendLayout();
             // 
             // darkSectionPanel1
@@ -68,66 +68,6 @@
             this.darkSectionPanel1.SectionHeader = "Select Base Dish";
             this.darkSectionPanel1.Size = new System.Drawing.Size(279, 242);
             this.darkSectionPanel1.TabIndex = 5;
-            // 
-            // panelCombo
-            // 
-            this.panelCombo.Controls.Add(this.ComboBaseDish);
-            this.panelCombo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelCombo.Location = new System.Drawing.Point(1, 25);
-            this.panelCombo.Name = "panelCombo";
-            this.panelCombo.Size = new System.Drawing.Size(277, 32);
-            this.panelCombo.TabIndex = 0;
-            // 
-            // ComboBaseDish
-            // 
-            this.ComboBaseDish.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.ComboBaseDish.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
-            this.ComboBaseDish.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ComboBaseDish.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ComboBaseDish.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ComboBaseDish.ForeColor = System.Drawing.Color.Gainsboro;
-            this.ComboBaseDish.FormattingEnabled = true;
-            this.ComboBaseDish.Location = new System.Drawing.Point(0, 0);
-            this.ComboBaseDish.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.ComboBaseDish.Name = "ComboBaseDish";
-            this.ComboBaseDish.Size = new System.Drawing.Size(277, 21);
-            this.ComboBaseDish.TabIndex = 3;
-            this.ComboBaseDish.SelectedIndexChanged += new System.EventHandler(this.ComboBaseDish_Changed);
-            this.ComboBaseDish.Validating += new System.ComponentModel.CancelEventHandler(this.ComboBaseDish_Validating);
-            this.ComboBaseDish.Validated += new System.EventHandler(this.ComboBaseDish_Validated);
-            // 
-            // panelNote
-            // 
-            this.panelNote.Controls.Add(this.labelNote);
-            this.panelNote.Controls.Add(this.titleNote);
-            this.panelNote.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelNote.Location = new System.Drawing.Point(1, 165);
-            this.panelNote.Name = "panelNote";
-            this.panelNote.Size = new System.Drawing.Size(277, 76);
-            this.panelNote.TabIndex = 2;
-            // 
-            // titleNote
-            // 
-            this.titleNote.Dock = System.Windows.Forms.DockStyle.Top;
-            this.titleNote.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleNote.Location = new System.Drawing.Point(0, 0);
-            this.titleNote.Name = "titleNote";
-            this.titleNote.Size = new System.Drawing.Size(277, 23);
-            this.titleNote.TabIndex = 16;
-            this.titleNote.Text = "Note";
-            // 
-            // labelNote
-            // 
-            this.labelNote.AutoSize = true;
-            this.labelNote.Dock = System.Windows.Forms.DockStyle.Left;
-            this.labelNote.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.labelNote.Location = new System.Drawing.Point(0, 23);
-            this.labelNote.Name = "labelNote";
-            this.labelNote.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.labelNote.Size = new System.Drawing.Size(36, 13);
-            this.labelNote.TabIndex = 17;
-            this.labelNote.Text = "N/A";
-            this.labelNote.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panelInfo
             // 
@@ -326,6 +266,64 @@
             this.darkLabel1.Text = "Base Rating";
             this.darkLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // panelNote
+            // 
+            this.panelNote.Controls.Add(this.labelNote);
+            this.panelNote.Controls.Add(this.titleNote);
+            this.panelNote.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelNote.Location = new System.Drawing.Point(1, 165);
+            this.panelNote.Name = "panelNote";
+            this.panelNote.Size = new System.Drawing.Size(277, 76);
+            this.panelNote.TabIndex = 2;
+            // 
+            // labelNote
+            // 
+            this.labelNote.AutoSize = true;
+            this.labelNote.Dock = System.Windows.Forms.DockStyle.Left;
+            this.labelNote.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.labelNote.Location = new System.Drawing.Point(0, 23);
+            this.labelNote.Name = "labelNote";
+            this.labelNote.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.labelNote.Size = new System.Drawing.Size(36, 13);
+            this.labelNote.TabIndex = 17;
+            this.labelNote.Text = "N/A";
+            this.labelNote.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // titleNote
+            // 
+            this.titleNote.Dock = System.Windows.Forms.DockStyle.Top;
+            this.titleNote.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleNote.Location = new System.Drawing.Point(0, 0);
+            this.titleNote.Name = "titleNote";
+            this.titleNote.Size = new System.Drawing.Size(277, 23);
+            this.titleNote.TabIndex = 16;
+            this.titleNote.Text = "Note";
+            // 
+            // panelCombo
+            // 
+            this.panelCombo.Controls.Add(this.Combo_BaseDish);
+            this.panelCombo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelCombo.Location = new System.Drawing.Point(1, 25);
+            this.panelCombo.Name = "panelCombo";
+            this.panelCombo.Size = new System.Drawing.Size(277, 32);
+            this.panelCombo.TabIndex = 0;
+            // 
+            // Combo_BaseDish
+            // 
+            this.Combo_BaseDish.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.Combo_BaseDish.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
+            this.Combo_BaseDish.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Combo_BaseDish.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Combo_BaseDish.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Combo_BaseDish.ForeColor = System.Drawing.Color.Gainsboro;
+            this.Combo_BaseDish.FormattingEnabled = true;
+            this.Combo_BaseDish.Location = new System.Drawing.Point(0, 0);
+            this.Combo_BaseDish.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.Combo_BaseDish.Name = "Combo_BaseDish";
+            this.Combo_BaseDish.Size = new System.Drawing.Size(277, 21);
+            this.Combo_BaseDish.TabIndex = 3;
+            this.Combo_BaseDish.SelectedIndexChanged += new System.EventHandler(this.ComboBaseDish_Changed);
+            // 
             // DialogSelectDish
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -335,16 +333,17 @@
             this.DialogButtons = DarkUI.Forms.DarkDialogButton.OkCancel;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DialogSelectDish";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Select Dish";
             this.Controls.SetChildIndex(this.darkSectionPanel1, 0);
             this.darkSectionPanel1.ResumeLayout(false);
-            this.panelCombo.ResumeLayout(false);
-            this.panelNote.ResumeLayout(false);
-            this.panelNote.PerformLayout();
             this.panelInfo.ResumeLayout(false);
             this.panelInfo.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.panelNote.ResumeLayout(false);
+            this.panelNote.PerformLayout();
+            this.panelCombo.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -355,7 +354,7 @@
         private DarkUI.Controls.DarkLabel labelNote;
         private DarkUI.Controls.DarkTitle titleNote;
         private System.Windows.Forms.Panel panelCombo;
-        private System.Windows.Forms.ComboBox ComboBaseDish;
+        private System.Windows.Forms.ComboBox Combo_BaseDish;
         private System.Windows.Forms.Panel panelInfo;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private DarkUI.Controls.DarkLabel darkLabel7;

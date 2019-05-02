@@ -62,13 +62,15 @@
     </Compile>
     <Compile Include="CafeItems\CraftedDish.cs" />
     <Compile Include="CafeItems\Dish.cs" />
+    <Compile Include="CafeItems\DishTable.cs" />
     <Compile Include="CafeItems\Quality.cs" />
     <Compile Include="CafeItems\Ingredient.cs" />
-    <Compile Include="CafeItems\IngredientList.cs" />
+    <Compile Include="CafeItems\IngredientsTable.cs" />
     <Compile Include="CafeItems\StoreInfo.cs" />
     <Compile Include="DarkUIExt\DarkToolWindowExt.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="DarkUIExt\DishChangedArgs.cs" />
     <Compile Include="Forms\Dialogs\DialogSaveDish.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,23 +83,23 @@
     <Compile Include="Forms\Dialogs\DialogSelectDish.Designer.cs">
       <DependentUpon>DialogSelectDish.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Docks\DockCafeDish.cs">
+    <Compile Include="Forms\Docks\DockDevDish.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\Docks\DockCafeDish.Designer.cs">
-      <DependentUpon>DockCafeDish.cs</DependentUpon>
+    <Compile Include="Forms\Docks\DockDevDish.Designer.cs">
+      <DependentUpon>DockDevDish.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Docks\DockDishInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Docks\DockDishInfo.Designer.cs">
+      <DependentUpon>DockDishInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Docks\DockIngredientList.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Forms\Docks\DockIngredientList.Designer.cs">
       <DependentUpon>DockIngredientList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Docks\DockDish.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\Docks\DockDish.Designer.cs">
-      <DependentUpon>DockDish.cs</DependentUpon>
     </Compile>
     <Compile Include="DarkUIExt\StatusMessageArgs.cs" />
     <Compile Include="Forms\MainForm.cs">
@@ -118,6 +120,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SerlializeHelper.cs" />
     <EmbeddedResource Include="AppIcons.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>AppIcons.Designer.cs</LastGenOutput>
@@ -128,11 +131,11 @@
     <EmbeddedResource Include="Forms\Dialogs\DialogSelectDish.resx">
       <DependentUpon>DialogSelectDish.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Docks\DockCafeDish.resx">
-      <DependentUpon>DockCafeDish.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Docks\DockDevDish.resx">
+      <DependentUpon>DockDevDish.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Docks\DockDish.resx">
-      <DependentUpon>DockDish.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Docks\DockDishInfo.resx">
+      <DependentUpon>DockDishInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Docks\DockIngredientList.resx">
       <DependentUpon>DockIngredientList.cs</DependentUpon>

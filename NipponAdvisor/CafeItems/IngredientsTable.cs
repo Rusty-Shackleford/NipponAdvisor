@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace NipponAdvisor.CafeItems
 {
-    public class IngredientList
+    public class IngredientsTable
     {
         #region [ Fields ]
-        public List<Ingredient> All { get; }
+        public List<Ingredient> Records { get; }
 
         public int CategoryCount { get; }
         public IEnumerable<Category> Categories { get; }
@@ -21,17 +21,17 @@ namespace NipponAdvisor.CafeItems
 
 
         #region [ Constructor ]
-        public IngredientList(string json)
+        public IngredientsTable(string json)
         {
             // Load ingredient data
-            All = JsonConvert.DeserializeObject<List<Ingredient>>(json);
+            Records = JsonConvert.DeserializeObject<List<Ingredient>>(json);
 
             // Create a unique list of categories.
-            Categories = All.Select(c => c.Category).Distinct();
+            Categories = Records.Select(c => c.Category).Distinct();
             CategoryCount = Categories.Count();
 
             // Create a grouping of ingredients by category
-            ByCategory = from ingredient in All
+            ByCategory = from ingredient in Records
                         group ingredient by ingredient.Category;
         }
         #endregion

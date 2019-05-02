@@ -12,15 +12,12 @@ namespace NipponAdvisor.DarkUIExt
     /// </summary>
     public class DarkToolWindowExt : DarkToolWindow
     {
-        /// <summary>
-        /// Provide an event for sending status messages to owner Forms.
-        /// </summary>
-        public event EventHandler<StatusMessageArgs> StatusUpdate;
-        protected virtual void OnStatusUpdate(StatusMessageArgs e)
+        // Create an event for passing Dishes around between Window Docks.
+        public event EventHandler<DishChangedArgs> DishChanged;
+        protected virtual void OnDishChanged(DishChangedArgs e)
         {
-            StatusUpdate?.Invoke(this, e);
+            DishChanged?.Invoke(this, e);
         }
-
         // Hack: So that Designer works - you still want to use the constructor though
         // to prevent the issue noted in the new Constructor summary!
         public DarkToolWindowExt() { }

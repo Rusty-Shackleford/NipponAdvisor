@@ -16,12 +16,9 @@ namespace NipponAdvisor.Forms
     {
         #region [ Fields ]
         private List<DarkToolWindowExt> _dockWindows = new List<DarkToolWindowExt>();
-        private DockCafeDish _dockCafeDish;
+        private DockDevDish _dockDevDish;
         private DockIngredientList _dockIngredients;
-
-        // Default Colors for Status Label
-        private Color StatusErrorColor = Color.FromArgb(255, 0, 0); 
-        private Color StatusDefaultColor = Color.FromArgb(220, 220, 220);
+        private DockDishInfo _dockDishInfo;
         #endregion
 
         #region [ Constructor | Load ]
@@ -40,30 +37,22 @@ namespace NipponAdvisor.Forms
             // input before letting events pass through to the rest of the application.
             Application.AddMessageFilter(DockPanel.DockResizeFilter);
 
-            // [Construct] Hook Events
             HookEvents();
 
-            // DOCK: Dish
-            _dockCafeDish = new DockCafeDish(DarkDockArea.Left)
-            {
-                Name = "DockCafeDish"
-            };
+            _dockDevDish = new DockDevDish(DarkDockArea.Left);
+            _dockIngredients = new DockIngredientList(DarkDockArea.Right);
+            _dockDishInfo = new DockDishInfo(_dockDevDish, DarkDockArea.Bottom);
 
-            // DOCK: Ingredients
-            _dockIngredients = new DockIngredientList(DarkDockArea.Right)
-            {
-                Name = "DockIngredients"
-            };
-
-            // DOCK: Setup
-            _dockWindows.Add(_dockCafeDish);
+            _dockWindows.Add(_dockDevDish);
             _dockWindows.Add(_dockIngredients);
+            _dockWindows.Add(_dockDishInfo);
 
+            // Adding Docks
             foreach (var dockWindow in _dockWindows)
-            {
                 DockPanel.AddContent(dockWindow);
-                dockWindow.StatusUpdate += UpdateStatusLabel;
-            }
+
+            // Custom dock placements:
+            DockPanel.AddContent(_dockDishInfo, _dockDevDish.DockGroup);
 
             // [Construct] Build Window Menu
             BuildWindowMenu();
@@ -84,51 +73,18 @@ namespace NipponAdvisor.Forms
         #region [ HookEvents ]
         private void HookEvents()
         {
+            // Serialization
+            FormClosing += MainForm_FormClosing;
+
             // Main Dock Panel
             DockPanel.ContentAdded += DockPanel_ContentAdded;
             DockPanel.ContentRemoved += DockPanel_ContentRemoved;
+
             // Menu Items
-            mnuIngredients.Click += Ingredients_Click;
-            mnuDish.Click += Dish_Click;
-        }
-        #endregion
-
-
-        #region [ HandleErrorMessages ]
-        public void UpdateStatusLabel(object sender, StatusMessageArgs args)
-        {
-            switch (args.Type)
-            {
-                case StatusType.Error:
-                    LabelStatus.Text = args.Message;
-                    LabelStatus.ForeColor = StatusErrorColor;
-                    break;
-                case StatusType.Ready:
-                    LabelStatus.Text = "Ready";
-                    LabelStatus.ForeColor = StatusDefaultColor;
-                    break;
-                case StatusType.Info:
-                    LabelStatus.Text = "Ready";
-                    LabelStatus.ForeColor = StatusDefaultColor;
-                    break;
-                case StatusType.Clear:
-                    LabelStatus.Text = "Ready";
-                    LabelStatus.ForeColor = StatusDefaultColor;
-                    break;
-                default:
-                    break;
-            }
-            
-        }
-
-        private void SetError()
-        {
-            LabelStatus.ForeColor = StatusErrorColor;
-        }
-
-        private void ClearError()
-        {
-            LabelStatus.ForeColor = StatusDefaultColor;
+            Menu_ViewIngredients.Click += Menu_ViewIngredients_Click;
+            Menu_ViewDevDish.Click += Menu_ViewDevDish_Click;
+            Menu_ViewDishInfo.Click += Menu_ViewDishInfo_Click;
+            Menu_NewDish.Click += Menu_NewDish_Click;
         }
         #endregion
 
@@ -137,13 +93,20 @@ namespace NipponAdvisor.Forms
         // Build the "Window" Menu
         private void BuildWindowMenu()
         {
-            mnuDish.Checked = DockPanel.ContainsContent(_dockCafeDish);
-            mnuIngredients.Checked = DockPanel.ContainsContent(_dockIngredients);
+            Menu_ViewDevDish.Checked = DockPanel.ContainsContent(_dockDevDish);
+            Menu_ViewIngredients.Checked = DockPanel.ContainsContent(_dockIngredients);
+            Menu_ViewDishInfo.Checked = DockPanel.ContainsContent(_dockDishInfo);
         }
         #endregion
 
 
-        #region [ DockPanel / Window Events ]
+        #region [ DockPanel Methods ]
+        // Save Form State
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SerializeDockPanel("dockpanel.config");
+        }
+
         // Toggle Form Docks
         private void ToggleToolWindow(DarkToolWindowExt toolWindow)
         {
@@ -165,24 +128,66 @@ namespace NipponAdvisor.Forms
             if (_dockWindows.Contains(e.Content as DarkToolWindowExt))
                 BuildWindowMenu();
         }
-        // Toggle Dish Window
-        private void Dish_Click(object sender, EventArgs e)
-        {
-            ToggleToolWindow(_dockCafeDish);
-        }
-        // Toggle Ingredients Window
-        private void Ingredients_Click(object sender, EventArgs e)
-        {
-            ToggleToolWindow(_dockIngredients);
-        }
+
         #endregion
 
 
         #region [ Menu Item Actions ]
-        private void mnuClose_Click(object sender, EventArgs e)
+        // File -> New Dish
+        private void Menu_NewDish_Click(object sender, EventArgs e)
         {
-            System.Windows.Forms.Application.Exit();
+            _dockDevDish.CreateNewDish();
         }
+        // File -> Exit
+        private void Menu_Exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        // Window -> Dish Info
+        private void Menu_ViewDevDish_Click(object sender, EventArgs e)
+        {
+            ToggleToolWindow(_dockDevDish);
+        }
+        // Window -> Ingredients
+        private void Menu_ViewIngredients_Click(object sender, EventArgs e)
+        {
+            ToggleToolWindow(_dockIngredients);
+        }
+        // Window -> Dish Info
+        private void Menu_ViewDishInfo_Click(object sender, EventArgs e)
+        {
+            ToggleToolWindow(_dockDishInfo);
+        }
+
+        #endregion
+
+
+        #region Serialization Region
+
+        private void SerializeDockPanel(string path)
+        {
+            var state = DockPanel.GetDockPanelState();
+            SerializerHelper.Serialize(state, path);
+        }
+
+        private void DeserializeDockPanel(string path)
+        {
+            var state = SerializerHelper.Deserialize<DockPanelState>(path);
+            DockPanel.RestoreDockPanelState(state, GetContentBySerializationKey);
+        }
+
+        private DarkDockContent GetContentBySerializationKey(string key)
+        {
+            foreach (var window in _dockWindows)
+            {
+                if (window.SerializationKey == key)
+                    return window;
+            }
+
+            return null;
+        }
+
         #endregion
 
     }

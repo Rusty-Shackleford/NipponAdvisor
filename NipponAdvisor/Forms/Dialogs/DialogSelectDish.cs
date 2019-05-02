@@ -1,15 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DarkUI.Forms;
 using NipponAdvisor.CafeItems;
-using System.Diagnostics;
+using NipponAdvisor.DarkUIExt;
 using NipponAdvisor.Forms.Docks;
 
 namespace NipponAdvisor.Forms.Dialogs
@@ -17,8 +11,13 @@ namespace NipponAdvisor.Forms.Dialogs
     public partial class DialogSelectDish : DarkDialog
     {
         #region [ Members ]
+        public bool ViewOnly { get; set; }
+
+        // Setting Selected Dish
+        // Updating Bindings
+        // Set the combobox
         public Dish SelectedDish { get; private set; }
-        public event EventHandler OnDishSelected;
+        public event EventHandler<DishChangedArgs> DishSelected;
         private bool _bindingsSet = false;
         #endregion
 
@@ -27,11 +26,50 @@ namespace NipponAdvisor.Forms.Dialogs
         public DialogSelectDish()
         {
             InitializeComponent();
+
+            // Load Drop Down
+            ComboBaseDish_Load();
+            ViewOnly = false;
+
+            // Hook into own events
             btnOk.Click += BtnOk_Click;
             btnCancel.Click += BtnCancel_Click;
-            ComboBaseDish_Load();
+            Activated += ActivatedCheck;
+            
+        }
+        #endregion
+
+
+        #region [ Activate / Close Events ]
+        private void ActivatedCheck(object sender, EventArgs e)
+        {
+
+            if (ViewOnly)
+            {
+                Combo_BaseDish.Enabled = false;
+                btnOk.Enabled = false;
+            }
+            else
+            {
+                Combo_BaseDish.Enabled = true;
+                btnOk.Enabled = true;
+            }
+
         }
 
+        private void CloseMe(object sender, FormClosingEventArgs e)
+        {
+            Close();
+        }
+
+        public void SetComboBaseDish(string dishName)
+        {
+            Combo_BaseDish.SelectedItem = dishName;
+        }
+        #endregion
+
+
+        #region [ Data Bindings ]
         private void RemoveBindings()
         {
             labelBaseRating.DataBindings.Clear();
@@ -44,10 +82,12 @@ namespace NipponAdvisor.Forms.Dialogs
             _bindingsSet = false;
         }
 
-        private void SetBindings()
+        private void RefreshBindings()
         {
             if (_bindingsSet)
                 RemoveBindings();
+
+            Combo_BaseDish.SelectedItem = SelectedDish.Name;
 
             labelBaseRating.DataBindings.Add("Text", SelectedDish, "Name");
             labelRecipe.DataBindings.Add("Text", SelectedDish, "RecipeDescription");
@@ -60,62 +100,15 @@ namespace NipponAdvisor.Forms.Dialogs
         }
         #endregion
 
-        private void SetSelectedDish()
-        {
-            SelectedDish = Program.DishTable.First
-                (d => d.Name == ComboBaseDish.SelectedItem.ToString());
-            SetBindings();
-        }
 
-
-        #region [ ComboBaseDish ]
-        // LOAD COMBO
+        #region [ Load DropDown Options ]
         private void ComboBaseDish_Load()
         {
-            ComboBaseDish.Items.Clear();
-            foreach (var dish in Program.DishTable)
+            Combo_BaseDish.Items.Clear();
+            foreach (var dish in Program.DishTable.Records)
             {
-                ComboBaseDish.Items.Add(dish.Name);
+                Combo_BaseDish.Items.Add(dish.Name);
             }
-        }
-
-        // VALIDATE
-        private bool ValidBaseDishComboBox(ComboBox combo, out string errorMessage)
-        {
-            errorMessage = "";
-            if (string.IsNullOrEmpty(combo.Text))
-            {
-                errorMessage = "Please select a base dish.";
-                return false;
-            }
-            if (!combo.Items.Contains(combo.Text))
-            {
-                errorMessage = "Please select a base dish.";
-                return false;
-            }
-            return true;
-        }
-
-        // VALIDATING
-        private void ComboBaseDish_Validating(object sender, CancelEventArgs e)
-        {
-            ComboBox box = (ComboBox)sender;
-            if (!ValidBaseDishComboBox(box, out string errorMessage))
-            {
-                e.Cancel = true;
-                box.Select(0, box.Text.Length);
-                box.ForeColor = Color.Orange;
-                OnInvalidated(null);
-            }
-        }
-
-        // VALIDATED: Create SelectedDish
-        private void ComboBaseDish_Validated(object sender, EventArgs e)
-        {
-            ComboBox box = (ComboBox)sender;
-            box.ForeColor = Color.Gainsboro;
-            Debug.WriteLine($"Selected Dish: {box.SelectedItem}");
-            SetSelectedDish();
         }
         #endregion
 
@@ -123,12 +116,10 @@ namespace NipponAdvisor.Forms.Dialogs
         #region [ BtnOk ]
         private void BtnOk_Click(object sender, EventArgs e)
         {
-            if (ValidBaseDishComboBox(ComboBaseDish, out string err)) {
-                if (SelectedDish != null)
-                {
-                    OnDishSelected?.Invoke(this, EventArgs.Empty);
-                    Hide();
-                }
+            if (SelectedDish != null)
+            {
+                DishSelected?.Invoke(this, new DishChangedArgs(SelectedDish));
+                Close();
             }
         }
         #endregion
@@ -141,9 +132,15 @@ namespace NipponAdvisor.Forms.Dialogs
         }
         #endregion
 
+
+        #region [ DropDown Item Changed ]
         private void ComboBaseDish_Changed(object sender, EventArgs e)
         {
-            SetSelectedDish();
+            SelectedDish = Program.DishTable.GetDishByName(
+                Combo_BaseDish.SelectedItem.ToString()
+            );
+            RefreshBindings();
         }
+        #endregion
     }
 }

@@ -10,17 +10,26 @@ namespace NipponAdvisor.CafeItems
     {
         #region [ Fields ]
         public Dish BaseDish { get; set; }
-        public QualitySet Quality { get; set; }
-        public string CustomName { get; set; }
+        public int Rating { get; set; }
         public Ingredient CookIngredient1 { get; set; }
         public Ingredient CookIngredient2 { get; set; }
+
+        public string Name { get { return BaseDish.Name; } }
+        public int Health { get; set; }
+        public int Brain { get; set; }
+        public int Texture { get; set; }
+        public int Aroma { get; set; }
+        public int Appearance { get; set; }
+        public int Volume { get; set; }
+        public int Rarity { get; set; }
+        public int Charisma { get; set; }
         #endregion
 
         #region [ Constructor ]
         public CraftedDish(Dish dish)
         {
             BaseDish = dish;
-            Quality = new QualitySet();
+            Rating = 1;
         }
         #endregion
 
@@ -29,9 +38,6 @@ namespace NipponAdvisor.CafeItems
         {
             if (BaseDish == null)
                 return false;
-            if (Quality == null)
-                return false;
-
             if (CookIngredient1 == null)
                 return false;
             if (CookIngredient2 == null)
