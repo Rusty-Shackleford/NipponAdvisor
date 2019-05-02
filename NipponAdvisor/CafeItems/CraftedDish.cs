@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NipponAdvisor.CafeItems
 {
-    public class CraftedDish : Dish
+    public class CraftedDish
     {
         #region [ Fields ]
         public Dish BaseDish { get; set; }
@@ -17,8 +17,9 @@ namespace NipponAdvisor.CafeItems
         #endregion
 
         #region [ Constructor ]
-        public CraftedDish() : base()
+        public CraftedDish(Dish dish)
         {
+            BaseDish = dish;
             Quality = new QualitySet();
         }
         #endregion

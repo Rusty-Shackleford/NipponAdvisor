@@ -69,11 +69,17 @@
     <Compile Include="DarkUIExt\DarkToolWindowExt.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\Dialogs\SelectBaseDish.cs">
+    <Compile Include="Forms\Dialogs\DialogSaveDish.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Dialogs\SelectBaseDish.Designer.cs">
-      <DependentUpon>SelectBaseDish.cs</DependentUpon>
+    <Compile Include="Forms\Dialogs\DialogSaveDish.Designer.cs">
+      <DependentUpon>DialogSaveDish.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dialogs\DialogSelectDish.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dialogs\DialogSelectDish.Designer.cs">
+      <DependentUpon>DialogSelectDish.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Docks\DockCafeDish.cs">
       <SubType>UserControl</SubType>
@@ -116,8 +122,11 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>AppIcons.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Dialogs\SelectBaseDish.resx">
-      <DependentUpon>SelectBaseDish.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Dialogs\DialogSaveDish.resx">
+      <DependentUpon>DialogSaveDish.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dialogs\DialogSelectDish.resx">
+      <DependentUpon>DialogSelectDish.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Docks\DockCafeDish.resx">
       <DependentUpon>DockCafeDish.cs</DependentUpon>

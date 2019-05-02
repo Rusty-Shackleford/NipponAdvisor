@@ -33,7 +33,7 @@ namespace NipponAdvisor.Forms.Docks
 
         private void DockDish_Reset()
         {
-            UserDish = new CraftedDish();
+           // UserDish = new CraftedDish();
             textDishName.Text = "Dish Nickname";
             ComboBaseDish.SelectedIndex = 0;
             sliderRating.Value = 1;

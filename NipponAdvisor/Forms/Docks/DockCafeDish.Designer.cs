@@ -31,16 +31,16 @@
             this.panelMain = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tblLayoutStats = new System.Windows.Forms.TableLayoutPanel();
-            this.textCharisma = new DarkUI.Controls.DarkTextBox();
-            this.textAroma = new DarkUI.Controls.DarkTextBox();
-            this.textRarity = new DarkUI.Controls.DarkTextBox();
-            this.textTexture = new DarkUI.Controls.DarkTextBox();
-            this.textVolume = new DarkUI.Controls.DarkTextBox();
-            this.textBrain = new DarkUI.Controls.DarkTextBox();
-            this.textAppearance = new DarkUI.Controls.DarkTextBox();
+            this.TextBoxCharisma = new DarkUI.Controls.DarkTextBox();
+            this.TextBoxAroma = new DarkUI.Controls.DarkTextBox();
+            this.TextBoxRarity = new DarkUI.Controls.DarkTextBox();
+            this.TextBoxTexture = new DarkUI.Controls.DarkTextBox();
+            this.TextBoxVolume = new DarkUI.Controls.DarkTextBox();
+            this.TextBoxBrain = new DarkUI.Controls.DarkTextBox();
+            this.TextBoxAppearance = new DarkUI.Controls.DarkTextBox();
             this.imgAppearance = new System.Windows.Forms.PictureBox();
             this.imgHealth = new System.Windows.Forms.PictureBox();
-            this.textHealth = new DarkUI.Controls.DarkTextBox();
+            this.TextBoxHealth = new DarkUI.Controls.DarkTextBox();
             this.imgRarity = new System.Windows.Forms.PictureBox();
             this.imgVolume = new System.Windows.Forms.PictureBox();
             this.imgCharisma = new System.Windows.Forms.PictureBox();
@@ -51,13 +51,13 @@
             this.panelRating = new System.Windows.Forms.Panel();
             this.labelRating = new DarkUI.Controls.DarkLabel();
             this.imgRating = new System.Windows.Forms.PictureBox();
-            this.sliderRating = new System.Windows.Forms.TrackBar();
+            this.SliderRating = new System.Windows.Forms.TrackBar();
             this.darkTitle3 = new DarkUI.Controls.DarkTitle();
             this.panelNickName = new System.Windows.Forms.Panel();
-            this.darkTextBox1 = new DarkUI.Controls.DarkTextBox();
+            this.TextBoxBaseDish = new DarkUI.Controls.DarkTextBox();
             this.darkTitle2 = new DarkUI.Controls.DarkTitle();
             this.panelButtons = new System.Windows.Forms.Panel();
-            this.darkButton1 = new DarkUI.Controls.DarkButton();
+            this.ButtonNewDish = new DarkUI.Controls.DarkButton();
             this.panelMain.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tblLayoutStats.SuspendLayout();
@@ -71,7 +71,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.imgBrain)).BeginInit();
             this.panelRating.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgRating)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sliderRating)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SliderRating)).BeginInit();
             this.panelNickName.SuspendLayout();
             this.panelButtons.SuspendLayout();
             this.SuspendLayout();
@@ -106,16 +106,16 @@
             this.tblLayoutStats.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tblLayoutStats.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tblLayoutStats.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblLayoutStats.Controls.Add(this.textCharisma, 3, 3);
-            this.tblLayoutStats.Controls.Add(this.textAroma, 1, 3);
-            this.tblLayoutStats.Controls.Add(this.textRarity, 3, 2);
-            this.tblLayoutStats.Controls.Add(this.textTexture, 1, 2);
-            this.tblLayoutStats.Controls.Add(this.textVolume, 3, 1);
-            this.tblLayoutStats.Controls.Add(this.textBrain, 1, 1);
-            this.tblLayoutStats.Controls.Add(this.textAppearance, 3, 0);
+            this.tblLayoutStats.Controls.Add(this.TextBoxCharisma, 3, 3);
+            this.tblLayoutStats.Controls.Add(this.TextBoxAroma, 1, 3);
+            this.tblLayoutStats.Controls.Add(this.TextBoxRarity, 3, 2);
+            this.tblLayoutStats.Controls.Add(this.TextBoxTexture, 1, 2);
+            this.tblLayoutStats.Controls.Add(this.TextBoxVolume, 3, 1);
+            this.tblLayoutStats.Controls.Add(this.TextBoxBrain, 1, 1);
+            this.tblLayoutStats.Controls.Add(this.TextBoxAppearance, 3, 0);
             this.tblLayoutStats.Controls.Add(this.imgAppearance, 2, 0);
             this.tblLayoutStats.Controls.Add(this.imgHealth, 0, 0);
-            this.tblLayoutStats.Controls.Add(this.textHealth, 1, 0);
+            this.tblLayoutStats.Controls.Add(this.TextBoxHealth, 1, 0);
             this.tblLayoutStats.Controls.Add(this.imgRarity, 2, 2);
             this.tblLayoutStats.Controls.Add(this.imgVolume, 2, 1);
             this.tblLayoutStats.Controls.Add(this.imgCharisma, 2, 3);
@@ -135,103 +135,103 @@
             this.tblLayoutStats.Size = new System.Drawing.Size(195, 124);
             this.tblLayoutStats.TabIndex = 1;
             // 
-            // textCharisma
+            // TextBoxCharisma
             // 
-            this.textCharisma.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.TextBoxCharisma.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textCharisma.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
-            this.textCharisma.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textCharisma.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.textCharisma.Location = new System.Drawing.Point(130, 95);
-            this.textCharisma.Name = "textCharisma";
-            this.textCharisma.Size = new System.Drawing.Size(62, 22);
-            this.textCharisma.TabIndex = 11;
-            this.textCharisma.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TextBoxCharisma.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
+            this.TextBoxCharisma.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBoxCharisma.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.TextBoxCharisma.Location = new System.Drawing.Point(130, 95);
+            this.TextBoxCharisma.Name = "TextBoxCharisma";
+            this.TextBoxCharisma.Size = new System.Drawing.Size(62, 22);
+            this.TextBoxCharisma.TabIndex = 11;
+            this.TextBoxCharisma.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textAroma
+            // TextBoxAroma
             // 
-            this.textAroma.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.TextBoxAroma.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textAroma.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
-            this.textAroma.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textAroma.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.textAroma.Location = new System.Drawing.Point(33, 95);
-            this.textAroma.Name = "textAroma";
-            this.textAroma.Size = new System.Drawing.Size(61, 22);
-            this.textAroma.TabIndex = 7;
-            this.textAroma.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TextBoxAroma.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
+            this.TextBoxAroma.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBoxAroma.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.TextBoxAroma.Location = new System.Drawing.Point(33, 95);
+            this.TextBoxAroma.Name = "TextBoxAroma";
+            this.TextBoxAroma.Size = new System.Drawing.Size(61, 22);
+            this.TextBoxAroma.TabIndex = 7;
+            this.TextBoxAroma.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textRarity
+            // TextBoxRarity
             // 
-            this.textRarity.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.TextBoxRarity.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textRarity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
-            this.textRarity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textRarity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.textRarity.Location = new System.Drawing.Point(130, 66);
-            this.textRarity.Name = "textRarity";
-            this.textRarity.Size = new System.Drawing.Size(62, 22);
-            this.textRarity.TabIndex = 10;
-            this.textRarity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TextBoxRarity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
+            this.TextBoxRarity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBoxRarity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.TextBoxRarity.Location = new System.Drawing.Point(130, 66);
+            this.TextBoxRarity.Name = "TextBoxRarity";
+            this.TextBoxRarity.Size = new System.Drawing.Size(62, 22);
+            this.TextBoxRarity.TabIndex = 10;
+            this.TextBoxRarity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textTexture
+            // TextBoxTexture
             // 
-            this.textTexture.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.TextBoxTexture.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textTexture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
-            this.textTexture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textTexture.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.textTexture.Location = new System.Drawing.Point(33, 66);
-            this.textTexture.Name = "textTexture";
-            this.textTexture.Size = new System.Drawing.Size(61, 22);
-            this.textTexture.TabIndex = 6;
-            this.textTexture.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TextBoxTexture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
+            this.TextBoxTexture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBoxTexture.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.TextBoxTexture.Location = new System.Drawing.Point(33, 66);
+            this.TextBoxTexture.Name = "TextBoxTexture";
+            this.TextBoxTexture.Size = new System.Drawing.Size(61, 22);
+            this.TextBoxTexture.TabIndex = 6;
+            this.TextBoxTexture.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textVolume
+            // TextBoxVolume
             // 
-            this.textVolume.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.TextBoxVolume.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textVolume.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
-            this.textVolume.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textVolume.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.textVolume.Location = new System.Drawing.Point(130, 37);
-            this.textVolume.Name = "textVolume";
-            this.textVolume.Size = new System.Drawing.Size(62, 22);
-            this.textVolume.TabIndex = 9;
-            this.textVolume.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TextBoxVolume.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
+            this.TextBoxVolume.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBoxVolume.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.TextBoxVolume.Location = new System.Drawing.Point(130, 37);
+            this.TextBoxVolume.Name = "TextBoxVolume";
+            this.TextBoxVolume.Size = new System.Drawing.Size(62, 22);
+            this.TextBoxVolume.TabIndex = 9;
+            this.TextBoxVolume.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBrain
+            // TextBoxBrain
             // 
-            this.textBrain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.TextBoxBrain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBrain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
-            this.textBrain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBrain.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.textBrain.Location = new System.Drawing.Point(33, 37);
-            this.textBrain.Name = "textBrain";
-            this.textBrain.Size = new System.Drawing.Size(61, 22);
-            this.textBrain.TabIndex = 5;
-            this.textBrain.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TextBoxBrain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
+            this.TextBoxBrain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBoxBrain.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.TextBoxBrain.Location = new System.Drawing.Point(33, 37);
+            this.TextBoxBrain.Name = "TextBoxBrain";
+            this.TextBoxBrain.Size = new System.Drawing.Size(61, 22);
+            this.TextBoxBrain.TabIndex = 5;
+            this.TextBoxBrain.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textAppearance
+            // TextBoxAppearance
             // 
-            this.textAppearance.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.TextBoxAppearance.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textAppearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
-            this.textAppearance.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textAppearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.textAppearance.Location = new System.Drawing.Point(130, 8);
-            this.textAppearance.Name = "textAppearance";
-            this.textAppearance.Size = new System.Drawing.Size(62, 22);
-            this.textAppearance.TabIndex = 8;
-            this.textAppearance.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TextBoxAppearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
+            this.TextBoxAppearance.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBoxAppearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.TextBoxAppearance.Location = new System.Drawing.Point(130, 8);
+            this.TextBoxAppearance.Name = "TextBoxAppearance";
+            this.TextBoxAppearance.Size = new System.Drawing.Size(62, 22);
+            this.TextBoxAppearance.TabIndex = 8;
+            this.TextBoxAppearance.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // imgAppearance
             // 
@@ -254,19 +254,19 @@
             this.imgHealth.TabIndex = 0;
             this.imgHealth.TabStop = false;
             // 
-            // textHealth
+            // TextBoxHealth
             // 
-            this.textHealth.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.TextBoxHealth.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textHealth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
-            this.textHealth.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textHealth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.textHealth.Location = new System.Drawing.Point(33, 8);
-            this.textHealth.Name = "textHealth";
-            this.textHealth.Size = new System.Drawing.Size(61, 22);
-            this.textHealth.TabIndex = 4;
-            this.textHealth.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TextBoxHealth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
+            this.TextBoxHealth.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBoxHealth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.TextBoxHealth.Location = new System.Drawing.Point(33, 8);
+            this.TextBoxHealth.Name = "TextBoxHealth";
+            this.TextBoxHealth.Size = new System.Drawing.Size(61, 22);
+            this.TextBoxHealth.TabIndex = 4;
+            this.TextBoxHealth.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // imgRarity
             // 
@@ -343,7 +343,7 @@
             // 
             this.panelRating.Controls.Add(this.labelRating);
             this.panelRating.Controls.Add(this.imgRating);
-            this.panelRating.Controls.Add(this.sliderRating);
+            this.panelRating.Controls.Add(this.SliderRating);
             this.panelRating.Controls.Add(this.darkTitle3);
             this.panelRating.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelRating.Location = new System.Drawing.Point(10, 84);
@@ -377,20 +377,20 @@
             this.imgRating.TabIndex = 19;
             this.imgRating.TabStop = false;
             // 
-            // sliderRating
+            // SliderRating
             // 
-            this.sliderRating.Dock = System.Windows.Forms.DockStyle.Left;
-            this.sliderRating.LargeChange = 3;
-            this.sliderRating.Location = new System.Drawing.Point(0, 23);
-            this.sliderRating.Margin = new System.Windows.Forms.Padding(0);
-            this.sliderRating.Maximum = 9;
-            this.sliderRating.Minimum = 1;
-            this.sliderRating.Name = "sliderRating";
-            this.sliderRating.Size = new System.Drawing.Size(156, 44);
-            this.sliderRating.TabIndex = 18;
-            this.sliderRating.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
-            this.sliderRating.Value = 1;
-            this.sliderRating.ValueChanged += new System.EventHandler(this.Rating_Changed);
+            this.SliderRating.Dock = System.Windows.Forms.DockStyle.Left;
+            this.SliderRating.LargeChange = 3;
+            this.SliderRating.Location = new System.Drawing.Point(0, 23);
+            this.SliderRating.Margin = new System.Windows.Forms.Padding(0);
+            this.SliderRating.Maximum = 9;
+            this.SliderRating.Minimum = 1;
+            this.SliderRating.Name = "SliderRating";
+            this.SliderRating.Size = new System.Drawing.Size(156, 44);
+            this.SliderRating.TabIndex = 18;
+            this.SliderRating.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
+            this.SliderRating.Value = 1;
+            this.SliderRating.ValueChanged += new System.EventHandler(this.Rating_Changed);
             // 
             // darkTitle3
             // 
@@ -405,7 +405,7 @@
             // 
             // panelNickName
             // 
-            this.panelNickName.Controls.Add(this.darkTextBox1);
+            this.panelNickName.Controls.Add(this.TextBoxBaseDish);
             this.panelNickName.Controls.Add(this.darkTitle2);
             this.panelNickName.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelNickName.Location = new System.Drawing.Point(10, 40);
@@ -414,19 +414,18 @@
             this.panelNickName.Size = new System.Drawing.Size(195, 44);
             this.panelNickName.TabIndex = 4;
             // 
-            // darkTextBox1
+            // TextBoxBaseDish
             // 
-            this.darkTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
-            this.darkTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.darkTextBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.darkTextBox1.Enabled = false;
-            this.darkTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkTextBox1.Location = new System.Drawing.Point(0, 22);
-            this.darkTextBox1.Margin = new System.Windows.Forms.Padding(3, 12, 3, 10);
-            this.darkTextBox1.Name = "darkTextBox1";
-            this.darkTextBox1.Size = new System.Drawing.Size(195, 22);
-            this.darkTextBox1.TabIndex = 5;
-            this.darkTextBox1.Text = "Baked Fish";
+            this.TextBoxBaseDish.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
+            this.TextBoxBaseDish.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBoxBaseDish.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.TextBoxBaseDish.Enabled = false;
+            this.TextBoxBaseDish.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.TextBoxBaseDish.Location = new System.Drawing.Point(0, 22);
+            this.TextBoxBaseDish.Margin = new System.Windows.Forms.Padding(3, 12, 3, 10);
+            this.TextBoxBaseDish.Name = "TextBoxBaseDish";
+            this.TextBoxBaseDish.Size = new System.Drawing.Size(195, 22);
+            this.TextBoxBaseDish.TabIndex = 5;
             // 
             // darkTitle2
             // 
@@ -441,22 +440,23 @@
             // 
             // panelButtons
             // 
-            this.panelButtons.Controls.Add(this.darkButton1);
+            this.panelButtons.Controls.Add(this.ButtonNewDish);
             this.panelButtons.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelButtons.Location = new System.Drawing.Point(10, 10);
             this.panelButtons.Name = "panelButtons";
             this.panelButtons.Size = new System.Drawing.Size(195, 30);
             this.panelButtons.TabIndex = 1;
             // 
-            // darkButton1
+            // ButtonNewDish
             // 
-            this.darkButton1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.darkButton1.Location = new System.Drawing.Point(0, 0);
-            this.darkButton1.Name = "darkButton1";
-            this.darkButton1.Padding = new System.Windows.Forms.Padding(5);
-            this.darkButton1.Size = new System.Drawing.Size(195, 23);
-            this.darkButton1.TabIndex = 1;
-            this.darkButton1.Text = "New";
+            this.ButtonNewDish.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ButtonNewDish.Location = new System.Drawing.Point(0, 0);
+            this.ButtonNewDish.Name = "ButtonNewDish";
+            this.ButtonNewDish.Padding = new System.Windows.Forms.Padding(5);
+            this.ButtonNewDish.Size = new System.Drawing.Size(195, 23);
+            this.ButtonNewDish.TabIndex = 1;
+            this.ButtonNewDish.Text = "New";
+            this.ButtonNewDish.Click += new System.EventHandler(this.BtnNewDish_Click);
             // 
             // DockCafeDish
             // 
@@ -484,7 +484,7 @@
             this.panelRating.ResumeLayout(false);
             this.panelRating.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgRating)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sliderRating)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SliderRating)).EndInit();
             this.panelNickName.ResumeLayout(false);
             this.panelNickName.PerformLayout();
             this.panelButtons.ResumeLayout(false);
@@ -499,21 +499,21 @@
         private System.Windows.Forms.Panel panelRating;
         private DarkUI.Controls.DarkLabel labelRating;
         private System.Windows.Forms.PictureBox imgRating;
-        private System.Windows.Forms.TrackBar sliderRating;
+        private System.Windows.Forms.TrackBar SliderRating;
         private DarkUI.Controls.DarkTitle darkTitle3;
         private System.Windows.Forms.Panel panel1;
         private DarkUI.Controls.DarkTitle darkTitle4;
         private System.Windows.Forms.TableLayoutPanel tblLayoutStats;
-        private DarkUI.Controls.DarkTextBox textCharisma;
-        private DarkUI.Controls.DarkTextBox textAroma;
-        private DarkUI.Controls.DarkTextBox textRarity;
-        private DarkUI.Controls.DarkTextBox textTexture;
-        private DarkUI.Controls.DarkTextBox textVolume;
-        private DarkUI.Controls.DarkTextBox textBrain;
-        private DarkUI.Controls.DarkTextBox textAppearance;
+        private DarkUI.Controls.DarkTextBox TextBoxCharisma;
+        private DarkUI.Controls.DarkTextBox TextBoxAroma;
+        private DarkUI.Controls.DarkTextBox TextBoxRarity;
+        private DarkUI.Controls.DarkTextBox TextBoxTexture;
+        private DarkUI.Controls.DarkTextBox TextBoxVolume;
+        private DarkUI.Controls.DarkTextBox TextBoxBrain;
+        private DarkUI.Controls.DarkTextBox TextBoxAppearance;
         private System.Windows.Forms.PictureBox imgAppearance;
         private System.Windows.Forms.PictureBox imgHealth;
-        private DarkUI.Controls.DarkTextBox textHealth;
+        private DarkUI.Controls.DarkTextBox TextBoxHealth;
         private System.Windows.Forms.PictureBox imgRarity;
         private System.Windows.Forms.PictureBox imgVolume;
         private System.Windows.Forms.PictureBox imgCharisma;
@@ -521,8 +521,8 @@
         private System.Windows.Forms.PictureBox imgAroma;
         private System.Windows.Forms.PictureBox imgBrain;
         private System.Windows.Forms.Panel panelNickName;
-        private DarkUI.Controls.DarkTextBox darkTextBox1;
+        private DarkUI.Controls.DarkTextBox TextBoxBaseDish;
         private DarkUI.Controls.DarkTitle darkTitle2;
-        private DarkUI.Controls.DarkButton darkButton1;
+        private DarkUI.Controls.DarkButton ButtonNewDish;
     }
 }

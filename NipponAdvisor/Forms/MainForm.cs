@@ -176,5 +176,14 @@ namespace NipponAdvisor.Forms
             ToggleToolWindow(_dockIngredients);
         }
         #endregion
+
+
+        #region [ Menu Item Actions ]
+        private void mnuClose_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
+        #endregion
+
     }
 }

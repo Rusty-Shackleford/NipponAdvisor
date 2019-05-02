@@ -11,9 +11,9 @@ using DarkUI.Forms;
 
 namespace NipponAdvisor.Forms.Dialogs
 {
-    public partial class SelectBaseDish : DarkDialog
+    public partial class DialogSaveDish : DarkMessageBox
     {
-        public SelectBaseDish()
+        public DialogSaveDish()
         {
             InitializeComponent();
         }

@@ -1,4 +1,6 @@
-﻿namespace NipponAdvisor.CafeItems
+﻿using System.Linq;
+
+namespace NipponAdvisor.CafeItems
 {
     public class Dish
     {
@@ -18,10 +20,81 @@
         public bool Craftable { get; set; }
         public string Source { get; set; }
 
+
+        #region [ Description Fields ]
+        public string PriceDescription
+        {
+            get { return $"$ {MaxPrice} / {PriceRating}"; }
+        }
+
+        public string CostPerMonthDescription
+        {
+            get { return $"$ {CostPerMonth.ToString()}"; }
+        }
+
+        public string TasteDescription
+        {
+            get { return $"{MaxTaste} / {TasteRating}"; }
+        }
+
+        public string AppealDescription
+        {
+            get { return $"{MaxAppeal} / {AppealRating}"; }
+        }
+
+        public string Note
+        {
+            get
+            {
+                if (!Craftable)
+                    return $"Can only be obtained by: {GetSourceDescription()}";
+                return "";
+            }
+        }
+
+        public string RecipeDescription
+        {
+            get
+            {
+                string returnString = "";
+                if (!string.IsNullOrEmpty(DerivedDish))
+                {
+                    returnString += $"[{DerivedDish}]\n +({RecipeIngredient1})";
+                    if (!string.IsNullOrEmpty(RecipeIngredient2))
+                    {
+                        returnString += $"\n +({RecipeIngredient2})";
+                    }
+                }
+                else
+                {
+                    returnString = "See note.";
+                }
+                return returnString;
+            }
+        }
+
+        public string GetSourceDescription()
+        {
+            var elem = Source.Split('|').ToList();
+            string retString = "";
+            foreach (var item in elem)
+            {
+                string source = "\n - " + item;
+                source = source.Replace(")", "");
+                source = source.Replace("(", "");
+                source = source.Replace(":", " : ");
+                retString += source;
+            }
+            return retString;
+        }
+        #endregion
+
+
+
         // Stat Fields
 
         public Dish() { }
     }
 
-    
+
 }
