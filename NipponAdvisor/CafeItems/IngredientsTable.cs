@@ -35,5 +35,13 @@ namespace NipponAdvisor.CafeItems
                         group ingredient by ingredient.Category;
         }
         #endregion
+
+
+        #region [ GetIngredientByName ]
+        public Ingredient GetIngredientByName(string name)
+        {
+            return Records.FirstOrDefault(d => d.Name == name);
+        }
+        #endregion
     }
 }

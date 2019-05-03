@@ -69,7 +69,7 @@
             this.tableLayoutPanel1.Controls.Add(this.Label_BaseRating, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.darkLabel1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 6);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -79,7 +79,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(221, 78);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(220, 78);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // darkLabel7
@@ -113,7 +113,7 @@
             this.Label_CostPerMonthDescription.AutoSize = true;
             this.Label_CostPerMonthDescription.Dock = System.Windows.Forms.DockStyle.Left;
             this.Label_CostPerMonthDescription.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.Label_CostPerMonthDescription.Location = new System.Drawing.Point(98, 13);
+            this.Label_CostPerMonthDescription.Location = new System.Drawing.Point(97, 13);
             this.Label_CostPerMonthDescription.Name = "Label_CostPerMonthDescription";
             this.Label_CostPerMonthDescription.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.Label_CostPerMonthDescription.Size = new System.Drawing.Size(36, 13);
@@ -139,7 +139,7 @@
             this.Label_AppealDescription.AutoSize = true;
             this.Label_AppealDescription.Dock = System.Windows.Forms.DockStyle.Left;
             this.Label_AppealDescription.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.Label_AppealDescription.Location = new System.Drawing.Point(98, 52);
+            this.Label_AppealDescription.Location = new System.Drawing.Point(97, 52);
             this.Label_AppealDescription.Name = "Label_AppealDescription";
             this.Label_AppealDescription.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.Label_AppealDescription.Size = new System.Drawing.Size(36, 13);
@@ -152,7 +152,7 @@
             this.Label_TasteDescription.AutoSize = true;
             this.Label_TasteDescription.Dock = System.Windows.Forms.DockStyle.Left;
             this.Label_TasteDescription.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.Label_TasteDescription.Location = new System.Drawing.Point(98, 39);
+            this.Label_TasteDescription.Location = new System.Drawing.Point(97, 39);
             this.Label_TasteDescription.Name = "Label_TasteDescription";
             this.Label_TasteDescription.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.Label_TasteDescription.Size = new System.Drawing.Size(36, 13);
@@ -165,7 +165,7 @@
             this.Label_PriceDescription.AutoSize = true;
             this.Label_PriceDescription.Dock = System.Windows.Forms.DockStyle.Left;
             this.Label_PriceDescription.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.Label_PriceDescription.Location = new System.Drawing.Point(98, 26);
+            this.Label_PriceDescription.Location = new System.Drawing.Point(97, 26);
             this.Label_PriceDescription.Name = "Label_PriceDescription";
             this.Label_PriceDescription.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.Label_PriceDescription.Size = new System.Drawing.Size(36, 13);
@@ -191,7 +191,7 @@
             this.Label_RecipeDescription.AutoSize = true;
             this.Label_RecipeDescription.Dock = System.Windows.Forms.DockStyle.Left;
             this.Label_RecipeDescription.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.Label_RecipeDescription.Location = new System.Drawing.Point(98, 65);
+            this.Label_RecipeDescription.Location = new System.Drawing.Point(97, 65);
             this.Label_RecipeDescription.Name = "Label_RecipeDescription";
             this.Label_RecipeDescription.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.Label_RecipeDescription.Size = new System.Drawing.Size(36, 13);
@@ -217,7 +217,7 @@
             this.Label_BaseRating.AutoSize = true;
             this.Label_BaseRating.Dock = System.Windows.Forms.DockStyle.Left;
             this.Label_BaseRating.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.Label_BaseRating.Location = new System.Drawing.Point(98, 0);
+            this.Label_BaseRating.Location = new System.Drawing.Point(97, 0);
             this.Label_BaseRating.Name = "Label_BaseRating";
             this.Label_BaseRating.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.Label_BaseRating.Size = new System.Drawing.Size(36, 13);
@@ -243,9 +243,10 @@
             this.panelNote.Controls.Add(this.Label_Note);
             this.panelNote.Controls.Add(this.titleNote);
             this.panelNote.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelNote.Location = new System.Drawing.Point(0, 78);
+            this.panelNote.Location = new System.Drawing.Point(0, 84);
             this.panelNote.Name = "panelNote";
-            this.panelNote.Size = new System.Drawing.Size(221, 52);
+            this.panelNote.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
+            this.panelNote.Size = new System.Drawing.Size(220, 52);
             this.panelNote.TabIndex = 4;
             // 
             // Label_Note
@@ -253,7 +254,7 @@
             this.Label_Note.AutoSize = true;
             this.Label_Note.Dock = System.Windows.Forms.DockStyle.Left;
             this.Label_Note.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.Label_Note.Location = new System.Drawing.Point(0, 23);
+            this.Label_Note.Location = new System.Drawing.Point(0, 29);
             this.Label_Note.Name = "Label_Note";
             this.Label_Note.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.Label_Note.Size = new System.Drawing.Size(36, 13);
@@ -265,9 +266,9 @@
             // 
             this.titleNote.Dock = System.Windows.Forms.DockStyle.Top;
             this.titleNote.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleNote.Location = new System.Drawing.Point(0, 0);
+            this.titleNote.Location = new System.Drawing.Point(0, 6);
             this.titleNote.Name = "titleNote";
-            this.titleNote.Size = new System.Drawing.Size(221, 23);
+            this.titleNote.Size = new System.Drawing.Size(220, 23);
             this.titleNote.TabIndex = 16;
             this.titleNote.Text = "Note";
             // 
@@ -278,7 +279,8 @@
             this.panelInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelInfo.Location = new System.Drawing.Point(0, 25);
             this.panelInfo.Name = "panelInfo";
-            this.panelInfo.Size = new System.Drawing.Size(221, 150);
+            this.panelInfo.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
+            this.panelInfo.Size = new System.Drawing.Size(220, 145);
             this.panelInfo.TabIndex = 7;
             // 
             // DockDishInfo
@@ -288,8 +290,9 @@
             this.Controls.Add(this.panelInfo);
             this.DockText = "Base Dish Info";
             this.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.MinimumSize = new System.Drawing.Size(220, 170);
             this.Name = "DockDishInfo";
-            this.Size = new System.Drawing.Size(221, 175);
+            this.Size = new System.Drawing.Size(220, 170);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.panelNote.ResumeLayout(false);

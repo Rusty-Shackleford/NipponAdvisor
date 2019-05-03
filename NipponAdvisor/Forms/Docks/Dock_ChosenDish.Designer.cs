@@ -1,6 +1,6 @@
 ﻿namespace NipponAdvisor.Forms.Docks
 {
-    partial class DockDevDish
+    partial class Dock_ChosenDish
     {
         /// <summary> 
         /// Required designer variable.
@@ -88,7 +88,7 @@
             this.panelMain.Location = new System.Drawing.Point(0, 25);
             this.panelMain.Name = "panelMain";
             this.panelMain.Padding = new System.Windows.Forms.Padding(10);
-            this.panelMain.Size = new System.Drawing.Size(222, 294);
+            this.panelMain.Size = new System.Drawing.Size(220, 300);
             this.panelMain.TabIndex = 0;
             // 
             // panelBottom
@@ -98,16 +98,16 @@
             this.panelBottom.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelBottom.Location = new System.Drawing.Point(10, 143);
             this.panelBottom.Name = "panelBottom";
-            this.panelBottom.Size = new System.Drawing.Size(202, 141);
+            this.panelBottom.Size = new System.Drawing.Size(200, 147);
             this.panelBottom.TabIndex = 6;
             // 
             // tblLayoutStats
             // 
             this.tblLayoutStats.ColumnCount = 4;
             this.tblLayoutStats.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tblLayoutStats.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tblLayoutStats.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tblLayoutStats.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tblLayoutStats.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tblLayoutStats.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tblLayoutStats.Controls.Add(this.TextBox_Charisma, 3, 3);
             this.tblLayoutStats.Controls.Add(this.TextBox_Aroma, 1, 3);
             this.tblLayoutStats.Controls.Add(this.TextBox_Rarity, 3, 2);
@@ -134,104 +134,90 @@
             this.tblLayoutStats.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tblLayoutStats.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tblLayoutStats.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tblLayoutStats.Size = new System.Drawing.Size(202, 124);
+            this.tblLayoutStats.Size = new System.Drawing.Size(200, 124);
             this.tblLayoutStats.TabIndex = 1;
             // 
             // TextBox_Charisma
             // 
-            this.TextBox_Charisma.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.TextBox_Charisma.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
             this.TextBox_Charisma.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBox_Charisma.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TextBox_Charisma.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.TextBox_Charisma.Location = new System.Drawing.Point(134, 95);
+            this.TextBox_Charisma.Location = new System.Drawing.Point(136, 95);
             this.TextBox_Charisma.Name = "TextBox_Charisma";
-            this.TextBox_Charisma.Size = new System.Drawing.Size(65, 22);
+            this.TextBox_Charisma.Size = new System.Drawing.Size(68, 22);
             this.TextBox_Charisma.TabIndex = 11;
             this.TextBox_Charisma.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TextBox_Aroma
             // 
-            this.TextBox_Aroma.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.TextBox_Aroma.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
             this.TextBox_Aroma.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBox_Aroma.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TextBox_Aroma.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.TextBox_Aroma.Location = new System.Drawing.Point(33, 95);
             this.TextBox_Aroma.Name = "TextBox_Aroma";
-            this.TextBox_Aroma.Size = new System.Drawing.Size(65, 22);
+            this.TextBox_Aroma.Size = new System.Drawing.Size(67, 22);
             this.TextBox_Aroma.TabIndex = 7;
             this.TextBox_Aroma.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TextBox_Rarity
             // 
-            this.TextBox_Rarity.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.TextBox_Rarity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
             this.TextBox_Rarity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBox_Rarity.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TextBox_Rarity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.TextBox_Rarity.Location = new System.Drawing.Point(134, 66);
+            this.TextBox_Rarity.Location = new System.Drawing.Point(136, 66);
             this.TextBox_Rarity.Name = "TextBox_Rarity";
-            this.TextBox_Rarity.Size = new System.Drawing.Size(65, 22);
+            this.TextBox_Rarity.Size = new System.Drawing.Size(68, 22);
             this.TextBox_Rarity.TabIndex = 10;
             this.TextBox_Rarity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TextBox_Texture
             // 
-            this.TextBox_Texture.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.TextBox_Texture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
             this.TextBox_Texture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBox_Texture.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TextBox_Texture.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.TextBox_Texture.Location = new System.Drawing.Point(33, 66);
             this.TextBox_Texture.Name = "TextBox_Texture";
-            this.TextBox_Texture.Size = new System.Drawing.Size(65, 22);
+            this.TextBox_Texture.Size = new System.Drawing.Size(67, 22);
             this.TextBox_Texture.TabIndex = 6;
             this.TextBox_Texture.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TextBox_Volume
             // 
-            this.TextBox_Volume.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.TextBox_Volume.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
             this.TextBox_Volume.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBox_Volume.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TextBox_Volume.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.TextBox_Volume.Location = new System.Drawing.Point(134, 37);
+            this.TextBox_Volume.Location = new System.Drawing.Point(136, 37);
             this.TextBox_Volume.Name = "TextBox_Volume";
-            this.TextBox_Volume.Size = new System.Drawing.Size(65, 22);
+            this.TextBox_Volume.Size = new System.Drawing.Size(68, 22);
             this.TextBox_Volume.TabIndex = 9;
             this.TextBox_Volume.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TextBox_Brain
             // 
-            this.TextBox_Brain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.TextBox_Brain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
             this.TextBox_Brain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBox_Brain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TextBox_Brain.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.TextBox_Brain.Location = new System.Drawing.Point(33, 37);
             this.TextBox_Brain.Name = "TextBox_Brain";
-            this.TextBox_Brain.Size = new System.Drawing.Size(65, 22);
+            this.TextBox_Brain.Size = new System.Drawing.Size(67, 22);
             this.TextBox_Brain.TabIndex = 5;
             this.TextBox_Brain.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TextBox_Appearance
             // 
-            this.TextBox_Appearance.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.TextBox_Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
             this.TextBox_Appearance.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBox_Appearance.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TextBox_Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.TextBox_Appearance.Location = new System.Drawing.Point(134, 8);
+            this.TextBox_Appearance.Location = new System.Drawing.Point(136, 8);
             this.TextBox_Appearance.Name = "TextBox_Appearance";
-            this.TextBox_Appearance.Size = new System.Drawing.Size(65, 22);
+            this.TextBox_Appearance.Size = new System.Drawing.Size(68, 22);
             this.TextBox_Appearance.TabIndex = 8;
             this.TextBox_Appearance.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -239,7 +225,7 @@
             // 
             this.imgAppearance.Dock = System.Windows.Forms.DockStyle.Right;
             this.imgAppearance.Image = global::NipponAdvisor.GameIcons.Appearance_24x;
-            this.imgAppearance.Location = new System.Drawing.Point(104, 8);
+            this.imgAppearance.Location = new System.Drawing.Point(106, 8);
             this.imgAppearance.Name = "imgAppearance";
             this.imgAppearance.Size = new System.Drawing.Size(24, 23);
             this.imgAppearance.TabIndex = 4;
@@ -258,15 +244,13 @@
             // 
             // TextBox_Health
             // 
-            this.TextBox_Health.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.TextBox_Health.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
             this.TextBox_Health.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBox_Health.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TextBox_Health.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.TextBox_Health.Location = new System.Drawing.Point(33, 8);
             this.TextBox_Health.Name = "TextBox_Health";
-            this.TextBox_Health.Size = new System.Drawing.Size(65, 22);
+            this.TextBox_Health.Size = new System.Drawing.Size(67, 22);
             this.TextBox_Health.TabIndex = 4;
             this.TextBox_Health.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -274,7 +258,7 @@
             // 
             this.imgRarity.Dock = System.Windows.Forms.DockStyle.Right;
             this.imgRarity.Image = global::NipponAdvisor.GameIcons.Rarity_24x;
-            this.imgRarity.Location = new System.Drawing.Point(104, 66);
+            this.imgRarity.Location = new System.Drawing.Point(106, 66);
             this.imgRarity.Name = "imgRarity";
             this.imgRarity.Size = new System.Drawing.Size(24, 23);
             this.imgRarity.TabIndex = 3;
@@ -284,7 +268,7 @@
             // 
             this.imgVolume.Dock = System.Windows.Forms.DockStyle.Right;
             this.imgVolume.Image = global::NipponAdvisor.GameIcons.Volume_24x;
-            this.imgVolume.Location = new System.Drawing.Point(104, 37);
+            this.imgVolume.Location = new System.Drawing.Point(106, 37);
             this.imgVolume.Name = "imgVolume";
             this.imgVolume.Size = new System.Drawing.Size(24, 23);
             this.imgVolume.TabIndex = 2;
@@ -294,7 +278,7 @@
             // 
             this.imgCharisma.Dock = System.Windows.Forms.DockStyle.Right;
             this.imgCharisma.Image = global::NipponAdvisor.GameIcons.Charisma_24x;
-            this.imgCharisma.Location = new System.Drawing.Point(104, 95);
+            this.imgCharisma.Location = new System.Drawing.Point(106, 95);
             this.imgCharisma.Name = "imgCharisma";
             this.imgCharisma.Size = new System.Drawing.Size(24, 26);
             this.imgCharisma.TabIndex = 6;
@@ -337,7 +321,7 @@
             this.darkTitle4.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.darkTitle4.Name = "darkTitle4";
             this.darkTitle4.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.darkTitle4.Size = new System.Drawing.Size(202, 13);
+            this.darkTitle4.Size = new System.Drawing.Size(200, 13);
             this.darkTitle4.TabIndex = 0;
             this.darkTitle4.Text = "Dish Stats";
             // 
@@ -351,7 +335,7 @@
             this.panelRating.Location = new System.Drawing.Point(10, 85);
             this.panelRating.Name = "panelRating";
             this.panelRating.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.panelRating.Size = new System.Drawing.Size(202, 58);
+            this.panelRating.Size = new System.Drawing.Size(200, 58);
             this.panelRating.TabIndex = 5;
             // 
             // labelRating
@@ -360,7 +344,7 @@
             this.labelRating.Dock = System.Windows.Forms.DockStyle.Left;
             this.labelRating.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRating.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.labelRating.Location = new System.Drawing.Point(167, 23);
+            this.labelRating.Location = new System.Drawing.Point(151, 23);
             this.labelRating.Margin = new System.Windows.Forms.Padding(0);
             this.labelRating.Name = "labelRating";
             this.labelRating.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
@@ -372,7 +356,7 @@
             // 
             this.imgRating.Dock = System.Windows.Forms.DockStyle.Left;
             this.imgRating.Image = global::NipponAdvisor.GameIcons.Star_24x;
-            this.imgRating.Location = new System.Drawing.Point(143, 23);
+            this.imgRating.Location = new System.Drawing.Point(127, 23);
             this.imgRating.Margin = new System.Windows.Forms.Padding(0);
             this.imgRating.Name = "imgRating";
             this.imgRating.Size = new System.Drawing.Size(24, 35);
@@ -388,7 +372,7 @@
             this.Slider_Rating.Maximum = 9;
             this.Slider_Rating.Minimum = 1;
             this.Slider_Rating.Name = "Slider_Rating";
-            this.Slider_Rating.Size = new System.Drawing.Size(143, 35);
+            this.Slider_Rating.Size = new System.Drawing.Size(127, 35);
             this.Slider_Rating.TabIndex = 18;
             this.Slider_Rating.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
             this.Slider_Rating.Value = 1;
@@ -400,7 +384,7 @@
             this.darkTitle3.Location = new System.Drawing.Point(0, 10);
             this.darkTitle3.Margin = new System.Windows.Forms.Padding(0);
             this.darkTitle3.Name = "darkTitle3";
-            this.darkTitle3.Size = new System.Drawing.Size(202, 13);
+            this.darkTitle3.Size = new System.Drawing.Size(200, 13);
             this.darkTitle3.TabIndex = 4;
             this.darkTitle3.Text = "Rating";
             // 
@@ -412,7 +396,7 @@
             this.panelBaseDish.Location = new System.Drawing.Point(10, 40);
             this.panelBaseDish.Margin = new System.Windows.Forms.Padding(5);
             this.panelBaseDish.Name = "panelBaseDish";
-            this.panelBaseDish.Size = new System.Drawing.Size(202, 45);
+            this.panelBaseDish.Size = new System.Drawing.Size(200, 45);
             this.panelBaseDish.TabIndex = 4;
             // 
             // TextBox_Name
@@ -425,7 +409,7 @@
             this.TextBox_Name.Margin = new System.Windows.Forms.Padding(5, 12, 3, 3);
             this.TextBox_Name.Name = "TextBox_Name";
             this.TextBox_Name.ReadOnly = true;
-            this.TextBox_Name.Size = new System.Drawing.Size(202, 22);
+            this.TextBox_Name.Size = new System.Drawing.Size(200, 22);
             this.TextBox_Name.TabIndex = 18;
             // 
             // panelBaseDishLabel
@@ -434,7 +418,7 @@
             this.panelBaseDishLabel.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelBaseDishLabel.Location = new System.Drawing.Point(0, 0);
             this.panelBaseDishLabel.Name = "panelBaseDishLabel";
-            this.panelBaseDishLabel.Size = new System.Drawing.Size(202, 22);
+            this.panelBaseDishLabel.Size = new System.Drawing.Size(200, 22);
             this.panelBaseDishLabel.TabIndex = 1;
             // 
             // darkTitle2
@@ -443,7 +427,7 @@
             this.darkTitle2.Location = new System.Drawing.Point(0, 0);
             this.darkTitle2.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.darkTitle2.Name = "darkTitle2";
-            this.darkTitle2.Size = new System.Drawing.Size(202, 13);
+            this.darkTitle2.Size = new System.Drawing.Size(200, 13);
             this.darkTitle2.TabIndex = 15;
             this.darkTitle2.Text = "Base Dish";
             // 
@@ -453,7 +437,7 @@
             this.panelNewDish.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelNewDish.Location = new System.Drawing.Point(10, 10);
             this.panelNewDish.Name = "panelNewDish";
-            this.panelNewDish.Size = new System.Drawing.Size(202, 30);
+            this.panelNewDish.Size = new System.Drawing.Size(200, 30);
             this.panelNewDish.TabIndex = 1;
             // 
             // Button_NewDish
@@ -463,7 +447,7 @@
             this.Button_NewDish.Margin = new System.Windows.Forms.Padding(0);
             this.Button_NewDish.Name = "Button_NewDish";
             this.Button_NewDish.Padding = new System.Windows.Forms.Padding(5);
-            this.Button_NewDish.Size = new System.Drawing.Size(202, 23);
+            this.Button_NewDish.Size = new System.Drawing.Size(200, 25);
             this.Button_NewDish.TabIndex = 1;
             this.Button_NewDish.Text = "New";
             this.Button_NewDish.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -473,13 +457,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.Controls.Add(this.panelMain);
+            this.DefaultDockArea = DarkUI.Docking.DarkDockArea.Left;
             this.DockText = "Develop Dish";
             this.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.Icon = global::NipponAdvisor.GameIcons.Food_16x11;
+            this.MinimumSize = new System.Drawing.Size(220, 320);
             this.Name = "DockDevDish";
-            this.Size = new System.Drawing.Size(222, 319);
+            this.Size = new System.Drawing.Size(220, 325);
             this.panelMain.ResumeLayout(false);
             this.panelBottom.ResumeLayout(false);
             this.tblLayoutStats.ResumeLayout(false);

@@ -50,9 +50,9 @@ namespace NipponAdvisor.Forms
             this.checkedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkedWithIconToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuWindow = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menu_ViewDevDish = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menu_ViewIngredients = new System.Windows.Forms.ToolStripMenuItem();
-            this.Menu_ViewDishInfo = new System.Windows.Forms.ToolStripMenuItem();
+            this.Menu_DevDish = new System.Windows.Forms.ToolStripMenuItem();
+            this.Menu_DishInfo = new System.Windows.Forms.ToolStripMenuItem();
+            this.Menu_Inventory = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu_About = new System.Windows.Forms.ToolStripMenuItem();
             this.darkSeparator1 = new DarkUI.Controls.DarkSeparator();
@@ -71,10 +71,10 @@ namespace NipponAdvisor.Forms
             this.LabelStatus,
             this.toolStripStatusLabel6,
             this.toolStripStatusLabel5});
-            this.stripMain.Location = new System.Drawing.Point(0, 515);
+            this.stripMain.Location = new System.Drawing.Point(0, 544);
             this.stripMain.Name = "stripMain";
             this.stripMain.Padding = new System.Windows.Forms.Padding(0, 5, 0, 3);
-            this.stripMain.Size = new System.Drawing.Size(923, 24);
+            this.stripMain.Size = new System.Drawing.Size(964, 24);
             this.stripMain.SizingGrip = false;
             this.stripMain.TabIndex = 3;
             this.stripMain.Text = "darkStatusStrip1";
@@ -91,7 +91,7 @@ namespace NipponAdvisor.Forms
             // 
             this.toolStripStatusLabel6.Margin = new System.Windows.Forms.Padding(0, 0, 50, 2);
             this.toolStripStatusLabel6.Name = "toolStripStatusLabel6";
-            this.toolStripStatusLabel6.Size = new System.Drawing.Size(738, 14);
+            this.toolStripStatusLabel6.Size = new System.Drawing.Size(779, 14);
             this.toolStripStatusLabel6.Spring = true;
             this.toolStripStatusLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -118,7 +118,7 @@ namespace NipponAdvisor.Forms
             this.mnuMain.Location = new System.Drawing.Point(0, 0);
             this.mnuMain.Name = "mnuMain";
             this.mnuMain.Padding = new System.Windows.Forms.Padding(3, 2, 0, 2);
-            this.mnuMain.Size = new System.Drawing.Size(923, 24);
+            this.mnuMain.Size = new System.Drawing.Size(964, 24);
             this.mnuMain.TabIndex = 5;
             this.mnuMain.Text = "darkMenuStrip1";
             // 
@@ -239,34 +239,35 @@ namespace NipponAdvisor.Forms
             // mnuWindow
             // 
             this.mnuWindow.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.Menu_ViewDevDish,
-            this.Menu_ViewIngredients,
-            this.Menu_ViewDishInfo});
+            this.Menu_DevDish,
+            this.Menu_DishInfo,
+            this.Menu_Inventory});
             this.mnuWindow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.mnuWindow.Name = "mnuWindow";
             this.mnuWindow.Size = new System.Drawing.Size(63, 20);
             this.mnuWindow.Text = "&Window";
             // 
-            // Menu_ViewDevDish
+            // Menu_DevDish
             // 
-            this.Menu_ViewDevDish.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.Menu_ViewDevDish.Name = "Menu_ViewDevDish";
-            this.Menu_ViewDevDish.Size = new System.Drawing.Size(180, 22);
-            this.Menu_ViewDevDish.Text = "&Develop Dish";
+            this.Menu_DevDish.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.Menu_DevDish.Name = "Menu_DevDish";
+            this.Menu_DevDish.Size = new System.Drawing.Size(180, 22);
+            this.Menu_DevDish.Text = "&Develop Dish";
             // 
-            // Menu_ViewIngredients
+            // Menu_DishInfo
             // 
-            this.Menu_ViewIngredients.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.Menu_ViewIngredients.Name = "Menu_ViewIngredients";
-            this.Menu_ViewIngredients.Size = new System.Drawing.Size(180, 22);
-            this.Menu_ViewIngredients.Text = "&Ingredients";
+            this.Menu_DishInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.Menu_DishInfo.Name = "Menu_DishInfo";
+            this.Menu_DishInfo.Size = new System.Drawing.Size(180, 22);
+            this.Menu_DishInfo.Text = "Dish I&nfo";
             // 
-            // Menu_ViewDishInfo
+            // Menu_Inventory
             // 
-            this.Menu_ViewDishInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.Menu_ViewDishInfo.Name = "Menu_ViewDishInfo";
-            this.Menu_ViewDishInfo.Size = new System.Drawing.Size(180, 22);
-            this.Menu_ViewDishInfo.Text = "Dish I&nfo";
+            this.Menu_Inventory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.Menu_Inventory.Name = "Menu_Inventory";
+            this.Menu_Inventory.Size = new System.Drawing.Size(180, 22);
+            this.Menu_Inventory.Text = "&Ingredient Manager";
+            this.Menu_Inventory.Click += new System.EventHandler(this.Menu_Toggle_Inventory);
             // 
             // mnuHelp
             // 
@@ -289,7 +290,7 @@ namespace NipponAdvisor.Forms
             this.darkSeparator1.Dock = System.Windows.Forms.DockStyle.Top;
             this.darkSeparator1.Location = new System.Drawing.Point(0, 24);
             this.darkSeparator1.Name = "darkSeparator1";
-            this.darkSeparator1.Size = new System.Drawing.Size(923, 2);
+            this.darkSeparator1.Size = new System.Drawing.Size(964, 2);
             this.darkSeparator1.TabIndex = 7;
             this.darkSeparator1.Text = "darkSeparator1";
             // 
@@ -299,14 +300,14 @@ namespace NipponAdvisor.Forms
             this.DockPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DockPanel.Location = new System.Drawing.Point(0, 26);
             this.DockPanel.Name = "DockPanel";
-            this.DockPanel.Size = new System.Drawing.Size(923, 489);
+            this.DockPanel.Size = new System.Drawing.Size(964, 518);
             this.DockPanel.TabIndex = 9;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(923, 539);
+            this.ClientSize = new System.Drawing.Size(964, 568);
             this.Controls.Add(this.DockPanel);
             this.Controls.Add(this.darkSeparator1);
             this.Controls.Add(this.mnuMain);
@@ -343,13 +344,13 @@ namespace NipponAdvisor.Forms
         private System.Windows.Forms.ToolStripMenuItem checkedToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem checkedWithIconToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mnuWindow;
-        private System.Windows.Forms.ToolStripMenuItem Menu_ViewDevDish;
-        private System.Windows.Forms.ToolStripMenuItem Menu_ViewIngredients;
+        private System.Windows.Forms.ToolStripMenuItem Menu_DevDish;
+        private System.Windows.Forms.ToolStripMenuItem Menu_Inventory;
         private System.Windows.Forms.ToolStripMenuItem mnuHelp;
         private System.Windows.Forms.ToolStripMenuItem Menu_About;
         private DarkUI.Controls.DarkSeparator darkSeparator1;
         private System.Windows.Forms.ToolStripMenuItem Menu_SaveDish;
         private DarkDockPanel DockPanel;
-        private System.Windows.Forms.ToolStripMenuItem Menu_ViewDishInfo;
+        private System.Windows.Forms.ToolStripMenuItem Menu_DishInfo;
     }
 }

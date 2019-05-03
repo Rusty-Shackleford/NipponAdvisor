@@ -25,7 +25,7 @@ namespace NipponAdvisor.CafeItems
         #region [ GetDishByName ]
         public Dish GetDishByName(string name)
         {
-            return Records.First(d => d.Name == name);
+            return Records.FirstOrDefault(d => d.Name == name);
         }
         #endregion
 

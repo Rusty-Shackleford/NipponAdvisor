@@ -16,10 +16,13 @@ namespace NipponAdvisor.Forms
     {
         #region [ Fields ]
         private List<DarkToolWindowExt> _dockWindows = new List<DarkToolWindowExt>();
-        private DockDevDish _dockDevDish;
-        private DockIngredientList _dockIngredients;
+        private Dock_ChosenDish _dockChosenDish;
         private DockDishInfo _dockDishInfo;
+        private Dock_Inventory _dockInventory;
+        private Dock_DevelopDish _dockDevelopDish_Calc;
+        private Dock_DevelopDish _dockDevelopDish_User;
         #endregion
+
 
         #region [ Constructor | Load ]
         public MainForm()
@@ -37,22 +40,27 @@ namespace NipponAdvisor.Forms
             // input before letting events pass through to the rest of the application.
             Application.AddMessageFilter(DockPanel.DockResizeFilter);
 
+            // [Construct] Hook Events Up
             HookEvents();
 
-            _dockDevDish = new DockDevDish(DarkDockArea.Left);
-            _dockIngredients = new DockIngredientList(DarkDockArea.Right);
-            _dockDishInfo = new DockDishInfo(_dockDevDish, DarkDockArea.Bottom);
+            _dockChosenDish = new Dock_ChosenDish(DarkDockArea.Document);
+            _dockDishInfo = new DockDishInfo(_dockChosenDish, DarkDockArea.Right);
+            _dockInventory = new Dock_Inventory(DarkDockArea.Bottom);
+            _dockDevelopDish_Calc = new Dock_DevelopDish();
+            _dockDevelopDish_User = new Dock_DevelopDish();
 
-            _dockWindows.Add(_dockDevDish);
-            _dockWindows.Add(_dockIngredients);
+            _dockWindows.Add(_dockChosenDish);            
+            _dockWindows.Add(_dockInventory);
             _dockWindows.Add(_dockDishInfo);
+            _dockWindows.Add(_dockDevelopDish_Calc);
+            _dockWindows.Add(_dockDevelopDish_User);
 
-            // Adding Docks
             foreach (var dockWindow in _dockWindows)
                 DockPanel.AddContent(dockWindow);
 
-            // Custom dock placements:
-            DockPanel.AddContent(_dockDishInfo, _dockDevDish.DockGroup);
+            // Customize Docks
+            DockPanel.Regions[DarkDockArea.Bottom].Height = 200;
+            DockPanel.AddContent(_dockDevelopDish_User, _dockDevelopDish_Calc.DockGroup);
 
             // [Construct] Build Window Menu
             BuildWindowMenu();
@@ -63,7 +71,7 @@ namespace NipponAdvisor.Forms
         #region [ Load ]
         private void MainForm_Load(object sender, EventArgs e)
         {
-            _dockIngredients.RefreshNodes();
+            _dockInventory.RefreshNodes();
             //_dockIngredients.Hide();
             //_dockIngredients.Show();
         }
@@ -81,21 +89,20 @@ namespace NipponAdvisor.Forms
             DockPanel.ContentRemoved += DockPanel_ContentRemoved;
 
             // Menu Items
-            Menu_ViewIngredients.Click += Menu_ViewIngredients_Click;
-            Menu_ViewDevDish.Click += Menu_ViewDevDish_Click;
-            Menu_ViewDishInfo.Click += Menu_ViewDishInfo_Click;
+            Menu_DevDish.Click += Menu_Toggle_DevDish;
+            Menu_DishInfo.Click += Menu_Toggle_DishInfo;
             Menu_NewDish.Click += Menu_NewDish_Click;
+            Menu_Inventory.Click += Menu_Toggle_Inventory;
         }
         #endregion
 
 
-        #region [ BuildWindowMenu ]     
-        // Build the "Window" Menu
+        #region [ BuildWindowMenu ]  
         private void BuildWindowMenu()
         {
-            Menu_ViewDevDish.Checked = DockPanel.ContainsContent(_dockDevDish);
-            Menu_ViewIngredients.Checked = DockPanel.ContainsContent(_dockIngredients);
-            Menu_ViewDishInfo.Checked = DockPanel.ContainsContent(_dockDishInfo);
+            Menu_DevDish.Checked = DockPanel.ContainsContent(_dockChosenDish);
+            Menu_DishInfo.Checked = DockPanel.ContainsContent(_dockDishInfo);
+            Menu_Inventory.Checked = DockPanel.ContainsContent(_dockInventory);
         }
         #endregion
 
@@ -118,7 +125,6 @@ namespace NipponAdvisor.Forms
         // Adding Docks
         private void DockPanel_ContentAdded(object sender, DockContentEventArgs e)
         {
-
             if (_dockWindows.Contains(e.Content as DarkToolWindowExt))
                 BuildWindowMenu();
         }
@@ -133,31 +139,34 @@ namespace NipponAdvisor.Forms
 
 
         #region [ Menu Item Actions ]
-        // File -> New Dish
+        // [FILE]->[NEW]
         private void Menu_NewDish_Click(object sender, EventArgs e)
         {
-            _dockDevDish.CreateNewDish();
+            _dockChosenDish.CreateNewDish();
         }
-        // File -> Exit
+
+        // [FILE]->[EXIT]
         private void Menu_Exit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        // Window -> Dish Info
-        private void Menu_ViewDevDish_Click(object sender, EventArgs e)
+        // [WINDOW]->[DEVELOP DISH]
+        private void Menu_Toggle_DevDish(object sender, EventArgs e)
         {
-            ToggleToolWindow(_dockDevDish);
+            ToggleToolWindow(_dockChosenDish);
         }
-        // Window -> Ingredients
-        private void Menu_ViewIngredients_Click(object sender, EventArgs e)
-        {
-            ToggleToolWindow(_dockIngredients);
-        }
-        // Window -> Dish Info
-        private void Menu_ViewDishInfo_Click(object sender, EventArgs e)
+
+        // [WINDOW]->[DISH INFO]
+        private void Menu_Toggle_DishInfo(object sender, EventArgs e)
         {
             ToggleToolWindow(_dockDishInfo);
+        }
+
+        // [WINDOW]->[INGREDIENT MANAGER]
+        private void Menu_Toggle_Inventory(object sender, EventArgs e)
+        {
+            ToggleToolWindow(_dockInventory);
         }
 
         #endregion
@@ -189,6 +198,5 @@ namespace NipponAdvisor.Forms
         }
 
         #endregion
-
     }
 }

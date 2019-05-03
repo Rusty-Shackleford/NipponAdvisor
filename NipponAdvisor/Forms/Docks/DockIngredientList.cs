@@ -2,13 +2,14 @@
 using DarkUI.Docking;
 using DarkUI.Controls;
 using NipponAdvisor.DarkUIExt;
-
+using System.Collections.Generic;
 
 namespace NipponAdvisor.Forms.Docks
 {
     public partial class DockIngredientList : DarkToolWindowExt
     {
         #region [ Members ]
+        public event EventHandler<IngredientsAddedArgs> IngredientsChosen;
         #endregion
 
         #region [ Constructor ]
@@ -39,9 +40,9 @@ namespace NipponAdvisor.Forms.Docks
                     };
                     categoryNode.Nodes.Add(ingredientNode);
                 }
-                treeIngredients.Nodes.Add(categoryNode);
+                Tree_Ingredients.Nodes.Add(categoryNode);
             }
-            treeIngredients.ShowIcons = true;
+            Tree_Ingredients.ShowIcons = true;
         }
         #endregion
 
@@ -53,10 +54,26 @@ namespace NipponAdvisor.Forms.Docks
             // spacing the node icons - expanding / contracting the root
             // properly refreshes the control to assign the right offsets
             // to each icon.
-            treeIngredients.Nodes[0].Expanded = true;
-            treeIngredients.Nodes[0].Expanded = false;
+            Tree_Ingredients.Nodes[0].Expanded = true;
+            Tree_Ingredients.Nodes[0].Expanded = false;
         }
         #endregion
 
+        private void Button_AddToInventory_Click(object sender, EventArgs e)
+        {
+            List<string> selected = new List<string>();
+
+            foreach (var node in Tree_Ingredients.SelectedNodes)
+            {
+                // If category node, add all children too.
+                if (node.Nodes.Count > 0)
+                    foreach (var childNode in node.Nodes)
+                        selected.Add(childNode.Text);
+                else
+                    // if not a category, then add the node.
+                    selected.Add(node.Text);
+            }
+            IngredientsChosen?.Invoke(this, new IngredientsAddedArgs(selected));
+        }
     }
 }

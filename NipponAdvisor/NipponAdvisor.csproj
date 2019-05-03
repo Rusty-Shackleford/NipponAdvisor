@@ -71,6 +71,7 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="DarkUIExt\DishChangedArgs.cs" />
+    <Compile Include="DarkUIExt\IngredientsAddedArgs.cs" />
     <Compile Include="Forms\Dialogs\DialogSaveDish.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,11 +84,11 @@
     <Compile Include="Forms\Dialogs\DialogSelectDish.Designer.cs">
       <DependentUpon>DialogSelectDish.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Docks\DockDevDish.cs">
+    <Compile Include="Forms\Docks\Dock_ChosenDish.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\Docks\DockDevDish.Designer.cs">
-      <DependentUpon>DockDevDish.cs</DependentUpon>
+    <Compile Include="Forms\Docks\Dock_ChosenDish.Designer.cs">
+      <DependentUpon>Dock_ChosenDish.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Docks\DockDishInfo.cs">
       <SubType>UserControl</SubType>
@@ -101,7 +102,18 @@
     <Compile Include="Forms\Docks\DockIngredientList.Designer.cs">
       <DependentUpon>DockIngredientList.cs</DependentUpon>
     </Compile>
-    <Compile Include="DarkUIExt\StatusMessageArgs.cs" />
+    <Compile Include="Forms\Docks\Dock_DevelopDish.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Docks\Dock_DevelopDish.Designer.cs">
+      <DependentUpon>Dock_DevelopDish.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Docks\Dock_Inventory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Docks\Dock_Inventory.Designer.cs">
+      <DependentUpon>Dock_Inventory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,14 +143,20 @@
     <EmbeddedResource Include="Forms\Dialogs\DialogSelectDish.resx">
       <DependentUpon>DialogSelectDish.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Docks\DockDevDish.resx">
-      <DependentUpon>DockDevDish.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Docks\Dock_ChosenDish.resx">
+      <DependentUpon>Dock_ChosenDish.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Docks\DockDishInfo.resx">
       <DependentUpon>DockDishInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Docks\DockIngredientList.resx">
       <DependentUpon>DockIngredientList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Docks\Dock_DevelopDish.resx">
+      <DependentUpon>Dock_DevelopDish.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Docks\Dock_Inventory.resx">
+      <DependentUpon>Dock_Inventory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

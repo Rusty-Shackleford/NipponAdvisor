@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace NipponAdvisor.Forms.Docks
 {
-    public partial class DockDevDish : DarkToolWindowExt
+    public partial class Dock_ChosenDish : DarkToolWindowExt
     {
         #region [ Members ]
         public CraftedDish Dish { get; set; }
@@ -22,7 +22,7 @@ namespace NipponAdvisor.Forms.Docks
 
 
         #region [ Constructor ]
-        public DockDevDish(DarkDockArea area) : base(area)
+        public Dock_ChosenDish(DarkDockArea area) : base(area)
         {
             InitializeComponent();
 
@@ -133,7 +133,7 @@ namespace NipponAdvisor.Forms.Docks
         {
             var dialog = new DialogSelectDish();
             dialog.DishSelected += Notify_DishSelected;
-            dialog.Show(this as DockDevDish);
+            dialog.Show(this as Dock_ChosenDish);
         }
         #endregion
     }
