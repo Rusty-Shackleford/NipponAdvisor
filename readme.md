@@ -17,7 +17,7 @@ It's going to recommend... which ingredients to use... ya this is WAY over-kill.
 ## Screenshots?
 
 Here's an early screenshot, most of the controls are working at this point.
-![screen](https://github.com/Rusty-Shackleford/NipponAdvisor/blob/master/screenshots/early2.png?raw=true)
+![screen](https://raw.githubusercontent.com/Rusty-Shackleford/NipponAdvisor/master/screenshots/early2.png)
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
