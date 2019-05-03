@@ -12,7 +12,12 @@ No install yet - please check back later!  I expect I will be spending a good am
 Once it is completed, an executible installer will be hosted on this GitHub project.
 
 ## Features
+It's going to recommend... which ingredients to use... ya this is WAY over-kill.  
 
+## Screenshots?
+
+Here's an early screenshot, most of the controls are working at this point.
+![screen](https://github.com/Rusty-Shackleford/NipponAdvisor/blob/master/screenshots/early2.png?raw=true)
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
