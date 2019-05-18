@@ -15,12 +15,10 @@ For now, you'll have to build the project in Visual Studio.
 
 ```
 git clone https://github.com/Rusty-Shackleford/NipponAdvisor
-
-Open NipponAdvisor.sln in Visual Studio
-
-<kbd>F5</kbd> build / run the application.
-
 ```
+
+- Open NipponAdvisor.sln in Visual Studio
+- <kbd>F5</kbd> build / run the application.
 
 Once the project is completed, an executible installer will be hosted on this GitHub project.
 
